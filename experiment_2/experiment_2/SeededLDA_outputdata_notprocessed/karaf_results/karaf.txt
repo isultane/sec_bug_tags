@@ -1,0 +1,211 @@
+Arguments:
+        Number of words      W = 1645
+        Number of docs       D = 389
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 18067
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 409.587097 Entropy (k|d): 1.724120 (w|k): 4.904331
+        Iter:20x:50x100x 100 /100, perp... (train) 244.128009 Entropy (k|d): 1.273805 (w|k): 4.048211
+Saving to models/
+Saving to models/ done
+Topic:0
+service -->     2.068350e-01
+apache  -->     8.029657e-02
+pax     -->     4.467538e-02
+server  -->     4.286002e-02
+bundle  -->     4.263155e-02
+stop    -->     2.981655e-02
+jetty   -->     2.920061e-02
+container       -->     2.190119e-02
+snapshot        -->     2.160921e-02
+run     -->     2.160921e-02
+eclipse -->     2.073328e-02
+support -->     1.781351e-02
+cause   -->     1.677309e-02
+thread  -->     1.489374e-02
+lang    -->     1.460176e-02
+internal        -->     1.430979e-02
+installing      -->     1.430979e-02
+method  -->     1.343386e-02
+installed       -->     1.255793e-02
+framework       -->     1.226595e-02
+beans   -->     1.168200e-02
+sun     -->     1.168200e-02
+reflect -->     1.022211e-02
+invoke  -->     9.638157e-03
+factory -->     9.346181e-03
+found   -->     8.470250e-03
+spec    -->     7.886296e-03
+set     -->     7.594319e-03
+specs   -->     7.302342e-03
+object  -->     5.842458e-03
+
+
+Topic:1
+https   -->     1.438573e-01
+git     -->     1.349181e-01
+apache  -->     1.189892e-01
+http    -->     1.001224e-01
+repos   -->     7.292958e-02
+web     -->     5.277299e-02
+commit  -->     3.569809e-02
+revision        -->     3.493043e-02
+fixed   -->     3.473852e-02
+master  -->     2.514277e-02
+amp     -->     1.919341e-02
+view    -->     1.765809e-02
+branch  -->     1.516320e-02
+pull    -->     1.516320e-02
+fix     -->     1.420362e-02
+trunk   -->     1.228447e-02
+patch   -->     7.486600e-03
+request -->     6.910856e-03
+can     -->     5.567451e-03
+cellar  -->     5.183621e-03
+merge   -->     3.840217e-03
+branches        -->     3.456387e-03
+tests   -->     3.264472e-03
+script  -->     3.254931e-03
+date    -->     3.072558e-03
+running -->     2.880643e-03
+tree    -->     2.880643e-03
+message -->     2.496813e-03
+upgrade -->     2.496813e-03
+repository      -->     2.496813e-03
+
+
+Topic:2
+code    -->     2.240018e-01
+execute -->     3.866858e-02
+feature -->     3.080353e-02
+bundle  -->     3.002864e-02
+string  -->     2.933525e-02
+bundles -->     2.169865e-02
+version -->     2.053633e-02
+start   -->     1.511215e-02
+features        -->     1.356239e-02
+snapshot        -->     1.336866e-02
+repository      -->     1.317494e-02
+log     -->     1.162518e-02
+level   -->     1.123774e-02
+pax     -->     1.085030e-02
+could   -->     9.881692e-03
+plugin  -->     9.687971e-03
+info    -->     9.300530e-03
+project -->     9.300530e-03
+xml     -->     8.138206e-03
+please  -->     7.750765e-03
+set     -->     7.750765e-03
+release -->     7.557044e-03
+can     -->     7.169603e-03
+error   -->     6.975882e-03
+na      -->     6.394720e-03
+maven   -->     6.200999e-03
+check   -->     6.007278e-03
+root    -->     5.813558e-03
+properties      -->     5.813558e-03
+repo    -->     5.813558e-03
+
+
+Topic:3
+file    -->     9.733221e-02
+user    -->     9.275206e-02
+cellar  -->     5.439408e-02
+local   -->     3.206508e-02
+features        -->     2.296872e-02
+directory       -->     2.175974e-02
+root    -->     1.934272e-02
+list    -->     1.853694e-02
+users   -->     1.832463e-02
+access  -->     1.832463e-02
+issue   -->     1.813405e-02
+windows -->     1.732827e-02
+install -->     1.571671e-02
+id      -->     1.531382e-02
+folder  -->     1.450804e-02
+camel   -->     1.410515e-02
+event   -->     1.410515e-02
+instance        -->     1.329938e-02
+key     -->     1.289649e-02
+password        -->     1.145440e-02
+configuration   -->     1.128493e-02
+artifact        -->     1.007626e-02
+installing      -->     9.673372e-03
+using   -->     8.867593e-03
+created -->     8.061815e-03
+makes   -->     8.019291e-03
+fine    -->     7.658926e-03
+home    -->     6.853147e-03
+cluster -->     6.853147e-03
+based   -->     6.853147e-03
+
+
+Topic:4
+name    -->     2.882382e-01
+apache  -->     1.374796e-01
+jar     -->     4.582878e-02
+shell   -->     3.470938e-02
+core    -->     2.662254e-02
+maven   -->     2.628559e-02
+command -->     2.628559e-02
+main    -->     2.561169e-02
+console -->     2.392693e-02
+features        -->     2.257912e-02
+xml     -->     1.786180e-02
+management      -->     1.752485e-02
+error   -->     1.280753e-02
+system  -->     9.774965e-03
+gogo    -->     9.438013e-03
+value   -->     7.416304e-03
+property        -->     6.742401e-03
+skipped -->     6.742401e-03
+aether  -->     6.068498e-03
+verify  -->     5.885713e-03
+field   -->     5.885713e-03
+compile -->     5.394595e-03
+tooling -->     5.057643e-03
+launcher        -->     4.720692e-03
+failed  -->     4.720692e-03
+properties      -->     4.720692e-03
+provided        -->     4.720692e-03
+failure -->     4.383740e-03
+region  -->     4.383740e-03
+directly        -->     4.383740e-03
+
+
+Topic:5
+update  -->     2.349416e-01
+issue   -->     2.842331e-02
+inject  -->     2.168902e-02
+oracle  -->     1.807456e-02
+can     -->     1.779432e-02
+parameter       -->     1.446011e-02
+version -->     1.409728e-02
+using   -->     1.363515e-02
+thanks  -->     1.247982e-02
+test    -->     1.132450e-02
+patch   -->     1.086237e-02
+change  -->     1.086237e-02
+database        -->     1.084566e-02
+fix     -->     1.016917e-02
+no      -->     9.938108e-03
+build   -->     8.320653e-03
+lib     -->     7.627457e-03
+pax     -->     7.627457e-03
+true    -->     7.627457e-03
+look    -->     7.165327e-03
+bin     -->     7.165327e-03
+fixed   -->     7.165327e-03
+create  -->     6.472132e-03
+bug     -->     6.472132e-03
+command -->     6.010002e-03
+current -->     6.010002e-03
+snapshot        -->     5.778937e-03
+provide -->     5.316807e-03
+exam    -->     5.085742e-03
+issues  -->     5.085742e-03
+

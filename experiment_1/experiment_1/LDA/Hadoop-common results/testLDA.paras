@@ -1,0 +1,8 @@
+-model	LDA
+-corpus	data/corpus
+-ntopics	100
+-alpha	0.1
+-beta	0.01
+-niters	1000
+-twords	100
+-name	testLDA

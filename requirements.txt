@@ -1,0 +1,17 @@
+# core (tfidf, lsa, evaluation) -- required
+scikit-learn>=1.3
+pandas>=1.5
+numpy>=1.23
+
+# pandas 3.x routes DataFrame.to_latex through Styler, which needs jinja2;
+# without it the comparison.tex write fails at the very end of a full run.
+jinja2>=3.0
+
+# preprocessing to match the paper (Porter stemming)
+nltk>=3.8
+
+# HDP baseline
+gensim>=4.3
+
+# SBERT baseline (pulls torch; use a GPU box or expect ~15 min CPU on 75k docs)
+sentence-transformers>=2.2

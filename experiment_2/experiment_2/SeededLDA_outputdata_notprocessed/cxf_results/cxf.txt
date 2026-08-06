@@ -1,0 +1,211 @@
+Arguments:
+        Number of words      W = 2560
+        Number of docs       D = 417
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 32339
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 783.661122 Entropy (k|d): 1.732871 (w|k): 5.489636
+        Iter:20x:50x100x 100 /100, perp... (train) 524.130163 Entropy (k|d): 1.381700 (w|k): 4.574780
+Saving to models/
+Saving to models/ done
+Topic:0
+server  -->     1.450015e-01
+service -->     1.135729e-01
+apache  -->     1.039635e-01
+cause   -->     3.928725e-02
+version -->     2.689097e-02
+jetty   -->     2.298262e-02
+lang    -->     1.641661e-02
+transport       -->     1.579127e-02
+jar     -->     1.563494e-02
+eclipse -->     1.516594e-02
+sun     -->     1.391527e-02
+security        -->     1.360260e-02
+invoke  -->     1.360260e-02
+client  -->     1.250826e-02
+run     -->     1.250826e-02
+snapshot        -->     1.141393e-02
+endpoint        -->     1.125759e-02
+xml     -->     1.125759e-02
+core    -->     1.110126e-02
+connection      -->     1.094493e-02
+error   -->     9.694256e-03
+thread  -->     8.599920e-03
+caused  -->     7.974585e-03
+tomcat  -->     7.349250e-03
+net     -->     6.880248e-03
+bus     -->     6.880248e-03
+handler -->     6.098580e-03
+interceptor     -->     5.785912e-03
+source  -->     5.316911e-03
+test    -->     5.004243e-03
+
+
+Topic:1
+http    -->     2.049617e-01
+https   -->     5.253264e-02
+web     -->     3.218851e-02
+apache  -->     3.061986e-02
+pull    -->     2.696403e-02
+request -->     2.582158e-02
+oasis   -->     2.353669e-02
+commit  -->     2.102331e-02
+security        -->     1.942388e-02
+trust   -->     1.919539e-02
+system  -->     1.896690e-02
+docs    -->     1.896690e-02
+message -->     1.713899e-02
+sp      -->     1.713899e-02
+policy  -->     1.668201e-02
+git     -->     1.439711e-02
+schemas -->     1.348316e-02
+address -->     1.348316e-02
+addressing      -->     1.119826e-02
+amp     -->     9.598838e-03
+soap    -->     8.913370e-03
+repos   -->     8.684881e-03
+id      -->     8.227902e-03
+patch   -->     7.999412e-03
+issue   -->     7.999412e-03
+fix     -->     7.770923e-03
+branch  -->     7.542434e-03
+configuration   -->     6.399987e-03
+value   -->     6.399987e-03
+master  -->     5.943008e-03
+
+
+Topic:2
+code    -->     1.775158e-01
+string  -->     9.372888e-02
+response        -->     2.428766e-02
+method  -->     1.553574e-02
+null    -->     1.498875e-02
+client  -->     1.498875e-02
+test    -->     1.312897e-02
+set     -->     1.291017e-02
+stack   -->     1.242713e-02
+request -->     1.225377e-02
+property        -->     1.159738e-02
+path    -->     1.072219e-02
+execute -->     1.029695e-02
+can     -->     9.956397e-03
+context -->     8.534211e-03
+bean    -->     8.206014e-03
+project -->     7.877817e-03
+no      -->     7.768418e-03
+add     -->     7.549620e-03
+using   -->     7.221423e-03
+properties      -->     6.893227e-03
+please  -->     6.783828e-03
+message -->     6.783828e-03
+create  -->     6.565030e-03
+map     -->     6.455631e-03
+could   -->     5.580440e-03
+attached        -->     5.580440e-03
+book    -->     5.361642e-03
+setting -->     5.361642e-03
+match   -->     5.033445e-03
+
+
+Topic:3
+user    -->     7.894999e-02
+file    -->     6.232951e-02
+apache  -->     5.548591e-02
+directory       -->     3.324365e-02
+users   -->     3.241263e-02
+active  -->     3.189884e-02
+local   -->     2.991956e-02
+api     -->     2.761028e-02
+access  -->     2.077829e-02
+version -->     2.064137e-02
+bundle  -->     1.849709e-02
+makes   -->     1.496112e-02
+found   -->     1.367246e-02
+proxy   -->     1.260032e-02
+password        -->     1.246805e-02
+client  -->     1.152818e-02
+authentication  -->     1.080600e-02
+project -->     1.072408e-02
+wrap    -->     1.072408e-02
+specs   -->     9.919973e-03
+plugin  -->     9.919973e-03
+core    -->     9.919973e-03
+root    -->     9.651938e-03
+library -->     9.383903e-03
+installing      -->     9.115868e-03
+management      -->     8.311763e-03
+installed       -->     8.043728e-03
+schema  -->     7.507658e-03
+resolved        -->     7.507658e-03
+feature -->     7.239623e-03
+
+
+Topic:4
+name    -->     1.688907e-01
+application     -->     8.389074e-02
+type    -->     5.207677e-02
+element -->     3.427663e-02
+xml     -->     3.124682e-02
+id      -->     2.613402e-02
+value   -->     2.158930e-02
+ssl     -->     1.833522e-02
+message -->     1.761267e-02
+sequence        -->     1.609777e-02
+test    -->     1.534031e-02
+content -->     1.477222e-02
+true    -->     1.439350e-02
+headers -->     1.382541e-02
+header  -->     1.344668e-02
+soap    -->     1.231050e-02
+schema  -->     1.174241e-02
+field   -->     1.055744e-02
+types   -->     1.041687e-02
+binding -->     9.280690e-03
+body    -->     9.091327e-03
+sample  -->     8.333874e-03
+data    -->     7.955148e-03
+main    -->     7.576422e-03
+error   -->     7.576422e-03
+generated       -->     7.387058e-03
+date    -->     7.387058e-03
+interceptor     -->     7.387058e-03
+prepaid -->     7.387058e-03
+operation       -->     6.818969e-03
+
+
+Topic:5
+parameter       -->     9.642923e-02
+update  -->     6.581703e-02
+query   -->     5.816398e-02
+write   -->     3.673543e-02
+can     -->     3.069357e-02
+issue   -->     2.329582e-02
+thanks  -->     2.235143e-02
+component       -->     1.530689e-02
+oracle  -->     1.377628e-02
+hi      -->     1.125481e-02
+select  -->     1.071506e-02
+fix     -->     1.038911e-02
+patch   -->     8.893823e-03
+using   -->     8.736425e-03
+please  -->     7.634632e-03
+bug     -->     7.162436e-03
+fixed   -->     7.005037e-03
+support -->     6.690239e-03
+test    -->     6.375441e-03
+spec    -->     6.296742e-03
+actually        -->     5.588447e-03
+am      -->     5.588447e-03
+cheers  -->     5.509748e-03
+tests   -->     5.194950e-03
+change  -->     5.116250e-03
+provider        -->     4.722753e-03
+time    -->     4.565354e-03
+call    -->     4.486655e-03
+added   -->     4.486655e-03
+method  -->     4.407956e-03
+

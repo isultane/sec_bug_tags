@@ -1,0 +1,210 @@
+Arguments:
+        Number of words      W = 2292
+        Number of docs       D = 422
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 21153
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 804.649721 Entropy (k|d): 1.725455 (w|k): 5.406245
+        Iter:20x:50x100x 100 /100, perp... (train) 550.193084 Entropy (k|d): 1.459129 (w|k): 4.554355
+Saving to models/
+Saving to models/ done
+Topic:0
+service -->     2.274350e-01
+patch   -->     4.081225e-02
+fixed   -->     2.663755e-02
+stop    -->     2.655021e-02
+test    -->     2.507989e-02
+rev     -->     2.414529e-02
+thanks  -->     2.398952e-02
+server  -->     2.389535e-02
+fix     -->     2.134150e-02
+issue   -->     1.993961e-02
+cause   -->     1.947057e-02
+please  -->     9.659051e-03
+tests   -->     9.347519e-03
+release -->     9.191753e-03
+revision        -->     9.191753e-03
+attached        -->     8.412922e-03
+integration     -->     8.412922e-03
+added   -->     8.257156e-03
+issues  -->     7.634092e-03
+object  -->     7.634092e-03
+methods -->     7.478326e-03
+trunk   -->     7.478326e-03
+applied -->     7.166794e-03
+lock    -->     6.855262e-03
+value   -->     6.232198e-03
+close   -->     6.076432e-03
+look    -->     5.609134e-03
+log     -->     5.453368e-03
+proposed        -->     5.453368e-03
+yes     -->     4.986070e-03
+
+
+Topic:1
+http    -->     1.936737e-01
+https   -->     6.759786e-02
+bundle  -->     3.700210e-02
+jetty   -->     3.315419e-02
+api     -->     2.634635e-02
+version -->     2.634635e-02
+apache  -->     2.131446e-02
+lang    -->     1.657857e-02
+web     -->     1.595232e-02
+bundles -->     1.569059e-02
+jar     -->     1.391464e-02
+index   -->     1.139536e-02
+issue   -->     1.095470e-02
+install -->     9.178746e-03
+support -->     8.882753e-03
+using   -->     8.290767e-03
+commit  -->     7.698781e-03
+release -->     7.402787e-03
+start   -->     6.810801e-03
+able    -->     6.810801e-03
+installed       -->     6.218815e-03
+windows -->     6.218815e-03
+dependencies    -->     6.218815e-03
+view    -->     6.218815e-03
+resolver        -->     6.218815e-03
+versions        -->     5.922822e-03
+internal        -->     5.922822e-03
+actually        -->     5.922822e-03
+console -->     5.626829e-03
+pom     -->     5.626829e-03
+
+
+Topic:2
+code    -->     1.588258e-01
+apache  -->     1.265620e-01
+string  -->     9.317874e-02
+bundle  -->     4.705654e-02
+framework       -->     3.917554e-02
+execute -->     2.682583e-02
+manager -->     2.086380e-02
+main    -->     1.993662e-02
+null    -->     1.947303e-02
+lang    -->     1.599612e-02
+gogo    -->     1.599612e-02
+trunk   -->     1.344638e-02
+run     -->     1.251921e-02
+error   -->     1.251921e-02
+stack   -->     9.884666e-03
+test    -->     9.505881e-03
+thread  -->     8.810498e-03
+can     -->     8.810498e-03
+tracker -->     8.346910e-03
+start   -->     7.419733e-03
+allows  -->     7.061138e-03
+repos   -->     6.956145e-03
+extension       -->     6.492556e-03
+check   -->     6.492556e-03
+log     -->     6.260762e-03
+extender        -->     6.028968e-03
+tracked -->     5.797174e-03
+reflect -->     5.797174e-03
+properties      -->     5.797174e-03
+object  -->     5.797174e-03
+
+
+Topic:3
+file    -->     1.364946e-01
+user    -->     2.843783e-02
+access  -->     2.843783e-02
+directory       -->     2.843783e-02
+makes   -->     2.417244e-02
+users   -->     2.417244e-02
+can     -->     2.269605e-02
+no      -->     1.494681e-02
+local   -->     1.421984e-02
+list    -->     1.328626e-02
+spec    -->     1.033417e-02
+bundle  -->     9.965155e-03
+set     -->     9.780649e-03
+could   -->     9.227132e-03
+bug     -->     8.858121e-03
+bundles -->     8.489109e-03
+check   -->     8.489109e-03
+issue   -->     8.304603e-03
+request -->     7.935592e-03
+solution        -->     7.935592e-03
+correct -->     7.566580e-03
+properties      -->     7.566580e-03
+system  -->     7.566580e-03
+path    -->     7.566580e-03
+net     -->     7.197569e-03
+location        -->     7.197569e-03
+current -->     7.013063e-03
+easier  -->     5.689043e-03
+password        -->     5.689043e-03
+add     -->     5.537017e-03
+
+
+Topic:4
+name    -->     1.597657e-01
+application     -->     6.745814e-02
+field   -->     4.260611e-02
+maven   -->     2.901767e-02
+eclipse -->     2.666510e-02
+plugin  -->     2.640370e-02
+active  -->     2.561951e-02
+ssl     -->     2.307951e-02
+version -->     1.777760e-02
+internal        -->     1.620922e-02
+source  -->     1.411805e-02
+sun     -->     1.359525e-02
+using   -->     1.202687e-02
+property        -->     1.124268e-02
+unknown -->     1.071989e-02
+example -->     1.019709e-02
+security        -->     1.019709e-02
+xml     -->     9.935697e-03
+snapshot        -->     9.674300e-03
+pull    -->     9.412903e-03
+configuration   -->     9.412903e-03
+found   -->     9.151506e-03
+project -->     8.890109e-03
+launcher        -->     7.321727e-03
+verify  -->     7.103196e-03
+deploy  -->     7.060331e-03
+equinox -->     6.798934e-03
+please  -->     6.537537e-03
+true    -->     6.537537e-03
+method  -->     6.537537e-03
+
+
+Topic:5
+component       -->     1.920522e-01
+update  -->     5.774274e-02
+configuration   -->     2.634697e-02
+method  -->     2.169789e-02
+write   -->     1.883065e-02
+can     -->     1.682743e-02
+parameter       -->     1.506496e-02
+factory -->     1.505636e-02
+instance        -->     1.328528e-02
+using   -->     1.195698e-02
+call    -->     1.129282e-02
+could   -->     1.107144e-02
+reference       -->     1.018590e-02
+components      -->     9.964515e-03
+fabric  -->     9.743131e-03
+services        -->     9.521746e-03
+inject  -->     8.788816e-03
+dependencies    -->     8.193440e-03
+called  -->     8.193440e-03
+created -->     7.972055e-03
+registered      -->     7.750671e-03
+change  -->     6.643748e-03
+classes -->     6.422364e-03
+add     -->     6.422364e-03
+instead -->     6.422364e-03
+actually        -->     6.200979e-03
+bound   -->     5.979595e-03
+true    -->     5.979595e-03
+filter  -->     5.979595e-03
+time    -->     5.758210e-03

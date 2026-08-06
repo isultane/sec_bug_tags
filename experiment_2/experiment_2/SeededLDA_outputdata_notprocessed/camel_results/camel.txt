@@ -1,0 +1,210 @@
+Arguments:
+        Number of words      W = 1829
+        Number of docs       D = 387
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 18127
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 469.484461 Entropy (k|d): 1.725551 (w|k): 4.996082
+        Iter:20x:50x100x 100 /100, perp... (train) 296.586152 Entropy (k|d): 1.371641 (w|k): 4.265920
+Saving to models/
+Saving to models/ done
+Topic:0
+server  -->     1.048829e-01
+service -->     9.024878e-02
+stop    -->     4.634640e-02
+cause   -->     4.146836e-02
+start   -->     2.705738e-02
+jetty   -->     2.204768e-02
+method  -->     1.753895e-02
+function        -->     1.707816e-02
+eclipse -->     1.553507e-02
+runners -->     1.503410e-02
+call    -->     1.453313e-02
+process -->     1.353119e-02
+invoke  -->     1.303022e-02
+cache   -->     1.202828e-02
+camel   -->     1.152731e-02
+handle  -->     1.052537e-02
+sun     -->     1.002440e-02
+reflect -->     9.022465e-03
+mail    -->     8.521495e-03
+surefire        -->     8.020526e-03
+processor       -->     8.020526e-03
+bug     -->     8.020526e-03
+handler -->     8.020526e-03
+template        -->     8.020526e-03
+maven   -->     7.018586e-03
+actually        -->     7.018586e-03
+evaluate        -->     7.018586e-03
+internal        -->     6.517616e-03
+connect -->     6.517616e-03
+thread  -->     6.016647e-03
+
+
+Topic:1
+https   -->     1.605344e-01
+http    -->     1.184037e-01
+camel   -->     1.108071e-01
+pull    -->     6.259133e-02
+patch   -->     4.275919e-02
+request -->     3.639107e-02
+apache  -->     3.529939e-02
+master  -->     3.202436e-02
+commit  -->     2.929517e-02
+can     -->     1.819644e-02
+git     -->     1.710477e-02
+applied -->     1.674087e-02
+branches        -->     1.437557e-02
+thanks  -->     1.437557e-02
+branch  -->     1.310195e-02
+fix     -->     1.237416e-02
+close   -->     1.019081e-02
+message -->     1.019081e-02
+web     -->     1.017131e-02
+date    -->     9.463025e-03
+changes -->     8.553293e-03
+closed  -->     8.553293e-03
+trunk   -->     8.553293e-03
+repository      -->     8.371347e-03
+apply   -->     8.189401e-03
+running -->     8.189401e-03
+review  -->     7.643562e-03
+merge   -->     7.279670e-03
+script  -->     7.265739e-03
+closes  -->     6.551885e-03
+
+
+Topic:2
+code    -->     2.468108e-01
+string  -->     3.759100e-02
+exchange        -->     2.360086e-02
+can     -->     2.147700e-02
+message -->     2.029707e-02
+null    -->     2.029707e-02
+set     -->     1.840919e-02
+header  -->     1.652131e-02
+endpoint        -->     1.557737e-02
+bus     -->     1.274555e-02
+context -->     1.274555e-02
+time    -->     1.203760e-02
+client  -->     1.180161e-02
+object  -->     1.156563e-02
+using   -->     1.109366e-02
+custom  -->     1.038570e-02
+queue   -->     9.441761e-03
+producer        -->     9.441761e-03
+consumer        -->     8.733806e-03
+false   -->     8.733806e-03
+bean    -->     8.261836e-03
+option  -->     6.845925e-03
+error   -->     6.609940e-03
+example -->     6.373955e-03
+add     -->     5.666000e-03
+instead -->     5.194030e-03
+setting -->     5.194030e-03
+current -->     4.958045e-03
+check   -->     4.722060e-03
+result  -->     4.722060e-03
+
+
+Topic:3
+file    -->     1.242751e-01
+user    -->     1.135955e-01
+route   -->     3.323711e-02
+test    -->     2.958140e-02
+can     -->     2.326698e-02
+camel   -->     2.094061e-02
+true    -->     1.927892e-02
+issue   -->     1.894658e-02
+makes   -->     1.553729e-02
+hi      -->     1.296450e-02
+users   -->     1.262468e-02
+unit    -->     1.229983e-02
+local   -->     1.165380e-02
+input   -->     1.163515e-02
+no      -->     1.097047e-02
+log     -->     1.063814e-02
+cell    -->     1.063814e-02
+data    -->     9.973461e-03
+using   -->     8.976447e-03
+body    -->     8.644109e-03
+split   -->     8.311771e-03
+thread  -->     7.979433e-03
+stream  -->     7.979433e-03
+password        -->     7.770309e-03
+access  -->     7.770309e-03
+system  -->     7.647095e-03
+add     -->     7.314757e-03
+please  -->     7.314757e-03
+files   -->     6.982419e-03
+id      -->     6.982419e-03
+
+
+Topic:4
+name    -->     1.989147e-01
+application     -->     5.543674e-02
+test    -->     2.991404e-02
+thanks  -->     2.661341e-02
+verify  -->     2.282810e-02
+can     -->     2.269391e-02
+issue   -->     2.269391e-02
+patch   -->     1.691780e-02
+type    -->     1.464862e-02
+headers -->     1.361717e-02
+response        -->     1.341088e-02
+subject -->     1.304552e-02
+content -->     1.299830e-02
+fix     -->     1.279201e-02
+xml     -->     1.114169e-02
+reporting       -->     9.903958e-03
+field   -->     9.784652e-03
+bean    -->     9.491379e-03
+camel   -->     9.491379e-03
+hi      -->     9.285089e-03
+change  -->     9.078800e-03
+could   -->     9.078800e-03
+regards -->     8.666221e-03
+look    -->     7.841063e-03
+fixed   -->     7.841063e-03
+am      -->     7.428484e-03
+consumer        -->     7.015905e-03
+using   -->     6.809616e-03
+unit    -->     6.809616e-03
+version -->     6.603326e-03
+
+
+Topic:5
+component       -->     2.232249e-01
+camel   -->     1.587008e-01
+apache  -->     9.308968e-02
+update  -->     3.839096e-02
+parameter       -->     1.848577e-02
+properties      -->     1.705653e-02
+spring  -->     1.350358e-02
+model   -->     1.302986e-02
+oracle  -->     1.279857e-02
+support -->     1.279299e-02
+property        -->     1.113495e-02
+main    -->     1.066122e-02
+core    -->     1.042436e-02
+version -->     9.476904e-03
+help    -->     9.003177e-03
+bundle  -->     9.003177e-03
+list    -->     9.003177e-03
+mock    -->     8.292587e-03
+run     -->     7.818861e-03
+write   -->     7.111367e-03
+feature -->     7.108270e-03
+id      -->     7.108270e-03
+root    -->     6.871407e-03
+error   -->     6.634544e-03
+lang    -->     6.397680e-03
+tests   -->     6.160817e-03
+groovy  -->     5.687090e-03
+components      -->     5.687090e-03
+caused  -->     5.450227e-03
+no      -->     5.450227e-03

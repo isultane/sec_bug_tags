@@ -1,0 +1,210 @@
+Arguments:
+        Number of words      W = 2121
+        Number of docs       D = 2223
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 39055
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 291.315884 Entropy (k|d): 1.726364 (w|k): 4.808125
+        Iter:20x:50x100x 100 /100, perp... (train) 158.367154 Entropy (k|d): 1.542525 (w|k): 3.891567
+Saving to models/
+Saving to models/ done
+Topic:0
+server  -->     2.187044e-01
+ambari  -->     1.381792e-01
+service -->     6.901163e-02
+main    -->     5.993900e-02
+stacks  -->     5.560785e-02
+test    -->     4.820297e-02
+services        -->     4.680582e-02
+resources       -->     4.666611e-02
+apache  -->     3.954066e-02
+xml     -->     3.115778e-02
+hive    -->     3.004006e-02
+configuration   -->     1.704659e-02
+scripts -->     1.634802e-02
+python  -->     1.369344e-02
+internal        -->     1.145800e-02
+commit  -->     9.082853e-03
+git     -->     7.685706e-03
+api     -->     7.406276e-03
+yarn    -->     7.266562e-03
+security        -->     6.567988e-03
+install -->     5.031126e-03
+amp     -->     4.891412e-03
+falcon  -->     4.472268e-03
+properties      -->     4.053124e-03
+hooks   -->     3.913409e-03
+start   -->     3.773694e-03
+stop    -->     3.687403e-03
+global  -->     3.633979e-03
+integrated      -->     3.494265e-03
+daemon  -->     3.277847e-03
+
+
+Topic:1
+ambari  -->     1.176043e-01
+https   -->     9.181838e-02
+http    -->     7.765630e-02
+web     -->     7.647613e-02
+apache  -->     6.018945e-02
+trunk   -->     5.676860e-02
+commit  -->     5.362511e-02
+site    -->     3.880305e-02
+git     -->     3.457928e-02
+amp     -->     3.448683e-02
+app     -->     3.069615e-02
+builds  -->     1.987886e-02
+job     -->     1.876939e-02
+repos   -->     1.830711e-02
+main    -->     1.765992e-02
+integrated      -->     1.636555e-02
+patch   -->     1.534854e-02
+reviews -->     1.368434e-02
+views   -->     1.331452e-02
+failure -->     1.118804e-02
+slider  -->     1.044840e-02
+index   -->     8.970239e-03
+review  -->     8.506831e-03
+view    -->     8.321920e-03
+controllers     -->     8.321920e-03
+resources       -->     6.750176e-03
+received        -->     5.270888e-03
+wizard  -->     4.901066e-03
+common  -->     3.514234e-03
+history -->     3.421778e-03
+
+
+Topic:2
+trunk   -->     2.207640e-01
+patch   -->     1.984841e-01
+stack   -->     1.424200e-01
+code    -->     1.093875e-01
+branch  -->     4.583437e-02
+added   -->     3.170250e-02
+execute -->     1.895433e-02
+memory  -->     1.732979e-02
+attached        -->     7.003552e-03
+integrated      -->     6.494295e-03
+patches -->     6.239667e-03
+pushed  -->     6.239667e-03
+lang    -->     5.985039e-03
+string  -->     5.957950e-03
+capacity        -->     5.857725e-03
+looks   -->     5.475782e-03
+tested  -->     4.966526e-03
+additional      -->     4.711897e-03
+allows  -->     4.333402e-03
+eclipse -->     4.329955e-03
+unit    -->     4.329955e-03
+object  -->     3.948012e-03
+review  -->     3.820698e-03
+updated -->     3.438756e-03
+issue   -->     3.311441e-03
+absolute        -->     3.184127e-03
+change  -->     3.056813e-03
+uploaded        -->     2.929499e-03
+fix     -->     2.929499e-03
+monitoring      -->     2.929499e-03
+
+
+Topic:3
+file    -->     9.914254e-02
+user    -->     7.918546e-02
+users   -->     3.927132e-02
+directory       -->     2.060180e-02
+local   -->     1.867047e-02
+host    -->     1.746960e-02
+client  -->     1.585565e-02
+ambari  -->     1.566577e-02
+lib     -->     1.424169e-02
+add     -->     1.272268e-02
+agent   -->     1.243787e-02
+access  -->     1.223270e-02
+cluster -->     1.215305e-02
+check   -->     1.072898e-02
+password        -->     1.030137e-02
+authentication  -->     7.726268e-03
+var     -->     7.406137e-03
+packages        -->     7.406137e-03
+command -->     6.931445e-03
+components      -->     6.836507e-03
+hosts   -->     6.741569e-03
+run     -->     6.456754e-03
+makes   -->     6.438715e-03
+can     -->     6.361815e-03
+action  -->     6.266877e-03
+root    -->     5.887124e-03
+error   -->     5.887124e-03
+line    -->     5.507371e-03
+install -->     5.412432e-03
+start   -->     5.317494e-03
+
+
+Topic:4
+name    -->     2.280910e-01
+field   -->     2.809116e-02
+version -->     2.217942e-02
+can     -->     1.880731e-02
+verify  -->     1.685522e-02
+api     -->     1.400853e-02
+yarn    -->     1.323035e-02
+ssl     -->     1.236084e-02
+value   -->     1.180369e-02
+services        -->     1.167399e-02
+issue   -->     1.141460e-02
+versions        -->     1.024733e-02
+application     -->     1.011365e-02
+property        -->     9.987938e-03
+root    -->     9.209758e-03
+repo    -->     8.690972e-03
+type    -->     8.172185e-03
+fix     -->     7.394006e-03
+list    -->     6.615826e-03
+global  -->     6.097039e-03
+please  -->     5.967342e-03
+issues  -->     5.967342e-03
+color   -->     5.448556e-03
+data    -->     5.318859e-03
+base    -->     5.189163e-03
+configuration   -->     5.059466e-03
+ganglia -->     5.059466e-03
+change  -->     5.059466e-03
+properties      -->     5.059466e-03
+updated -->     5.059466e-03
+
+
+Topic:5
+ambari  -->     1.583571e-01
+python  -->     7.311472e-02
+main    -->     6.637619e-02
+common  -->     6.469156e-02
+update  -->     6.428731e-02
+component       -->     6.428731e-02
+database        -->     5.649511e-02
+info    -->     5.222528e-02
+select  -->     3.311852e-02
+oracle  -->     2.532633e-02
+test    -->     2.476578e-02
+query   -->     2.143023e-02
+write   -->     1.948218e-02
+parameter       -->     1.558608e-02
+table   -->     1.448952e-02
+examples        -->     1.331028e-02
+success -->     1.331028e-02
+docs    -->     1.112026e-02
+tests   -->     9.435624e-03
+skipped -->     7.750992e-03
+errors  -->     5.224044e-03
+basic   -->     4.887118e-03
+build   -->     4.550191e-03
+error   -->     4.381728e-03
+fix     -->     4.044802e-03
+failures        -->     4.044802e-03
+create  -->     4.044802e-03
+maven   -->     3.876339e-03
+project -->     3.876339e-03
+run     -->     3.707875e-03

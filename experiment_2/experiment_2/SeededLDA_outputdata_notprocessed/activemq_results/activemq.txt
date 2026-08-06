@@ -1,0 +1,207 @@
+Arguments:
+        Number of words      W = 2986
+        Number of docs       D = 512
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 41799
+
+Topic:0
+server  -->     1.289199e-01
+apache  -->     1.161256e-01
+stop    -->     5.675780e-02
+broker  -->     5.632040e-02
+transport       -->     4.128739e-02
+service -->     3.891998e-02
+cause   -->     3.810917e-02
+run     -->     2.516504e-02
+source  -->     2.320421e-02
+thread  -->     2.287740e-02
+info    -->     2.200593e-02
+daemon  -->     2.189296e-02
+io      -->     2.135232e-02
+lang    -->     2.080764e-02
+unknown -->     1.993616e-02
+sun     -->     1.677705e-02
+method  -->     1.340007e-02
+start   -->     1.165712e-02
+jar     -->     1.089457e-02
+command -->     1.067670e-02
+reflect -->     8.606941e-03
+locks   -->     8.498007e-03
+worker  -->     8.389072e-03
+main    -->     8.280137e-03
+region  -->     7.953332e-03
+invoke  -->     7.408658e-03
+internal        -->     6.319310e-03
+runners -->     5.883571e-03
+crash   -->     4.865950e-03
+lock    -->     4.685287e-03
+
+
+Topic:1
+http    -->     8.948037e-02
+https   -->     7.569079e-02
+apache  -->     6.719243e-02
+web     -->     5.944974e-02
+network -->     3.616067e-02
+commit  -->     2.864455e-02
+pull    -->     2.248760e-02
+git     -->     1.981066e-02
+eclipse -->     1.927528e-02
+script  -->     1.838744e-02
+request -->     1.592911e-02
+fix     -->     1.552757e-02
+console -->     1.525987e-02
+jetty   -->     1.378756e-02
+fixed   -->     1.258294e-02
+jar     -->     1.151216e-02
+repos   -->     1.137832e-02
+trunk   -->     1.111062e-02
+net     -->     1.097678e-02
+patch   -->     1.003985e-02
+release -->     9.102921e-03
+bundle  -->     8.835227e-03
+index   -->     8.581520e-03
+cache   -->     8.433687e-03
+remote  -->     8.275085e-03
+data    -->     7.496759e-03
+lib     -->     7.229065e-03
+apply   -->     7.095219e-03
+core    -->     6.827525e-03
+can     -->     6.693678e-03
+
+
+Topic:2
+code    -->     1.623742e-01
+memory  -->     5.991400e-02
+test    -->     3.036550e-02
+string  -->     2.822081e-02
+execute -->     2.170852e-02
+stack   -->     1.649868e-02
+messages        -->     1.505488e-02
+message -->     1.505488e-02
+patch   -->     1.496934e-02
+connection      -->     1.411400e-02
+issue   -->     1.411400e-02
+can     -->     1.334419e-02
+tests   -->     1.308759e-02
+fixed   -->     9.751755e-03
+topic   -->     9.324084e-03
+fix     -->     8.297674e-03
+client  -->     7.955537e-03
+create  -->     7.698934e-03
+receive -->     7.442332e-03
+broker  -->     7.100195e-03
+no      -->     7.100195e-03
+unit    -->     7.014661e-03
+thanks  -->     6.586990e-03
+allows  -->     6.513154e-03
+added   -->     6.244853e-03
+warn    -->     6.159319e-03
+size    -->     6.159319e-03
+check   -->     5.817182e-03
+trunk   -->     5.646113e-03
+release -->     5.132908e-03
+
+
+Topic:3
+file    -->     8.634234e-02
+user    -->     5.414724e-02
+access  -->     3.292774e-02
+can     -->     2.854044e-02
+local   -->     2.707409e-02
+users   -->     2.195214e-02
+makes   -->     1.975702e-02
+password        -->     1.902531e-02
+issue   -->     1.787321e-02
+directory       -->     1.756190e-02
+test    -->     1.600177e-02
+using   -->     1.216531e-02
+could   -->     1.188460e-02
+false   -->     1.104245e-02
+snapshot        -->     1.038744e-02
+configuration   -->     8.796716e-03
+version -->     8.141711e-03
+obtain  -->     8.049710e-03
+please  -->     8.048139e-03
+data    -->     7.486706e-03
+system  -->     7.393134e-03
+wait    -->     7.299562e-03
+xml     -->     7.299562e-03
+thanks  -->     7.299562e-03
+issues  -->     6.925273e-03
+help    -->     6.644557e-03
+bug     -->     6.644557e-03
+time    -->     6.457413e-03
+hi      -->     6.270268e-03
+stomp   -->     6.083124e-03
+
+
+Topic:4
+name    -->     1.629859e-01
+ssl     -->     6.985163e-02
+application     -->     3.313524e-02
+message -->     2.881002e-02
+messages        -->     2.531515e-02
+queue   -->     2.408722e-02
+broker  -->     1.813649e-02
+consumer        -->     1.624737e-02
+client  -->     1.407488e-02
+test    -->     1.360260e-02
+value   -->     1.256359e-02
+field   -->     1.253825e-02
+verify  -->     1.253825e-02
+property        -->     1.228022e-02
+using   -->     1.199685e-02
+no      -->     1.124121e-02
+connection      -->     1.076893e-02
+send    -->     1.020219e-02
+consumers       -->     9.352086e-03
+session -->     7.935246e-03
+true    -->     7.462967e-03
+producer        -->     6.612863e-03
+close   -->     6.423951e-03
+spring  -->     6.140583e-03
+id      -->     6.046127e-03
+line    -->     5.762759e-03
+start   -->     5.479391e-03
+timeout -->     5.290479e-03
+clients -->     4.629287e-03
+fail    -->     4.440375e-03
+
+
+Topic:5
+update  -->     6.700662e-02
+write   -->     6.548378e-02
+parameter       -->     3.959549e-02
+database        -->     3.959549e-02
+apache  -->     3.611068e-02
+store   -->     3.299217e-02
+query   -->     2.893561e-02
+oracle  -->     2.588993e-02
+null    -->     2.577037e-02
+debug   -->     1.871269e-02
+component       -->     1.827573e-02
+run     -->     1.625071e-02
+journal -->     1.592245e-02
+queue   -->     1.592245e-02
+transaction     -->     1.559418e-02
+select  -->     1.523004e-02
+id      -->     1.493765e-02
+time    -->     1.346047e-02
+log     -->     1.247567e-02
+started -->     1.001369e-02
+region  -->     9.028901e-03
+response        -->     8.864769e-03
+master  -->     8.536505e-03
+failed  -->     7.715845e-03
+thread  -->     7.551713e-03
+read    -->     7.387581e-03
+elapsed -->     7.223449e-03
+broker  -->     7.059317e-03
+failures        -->     7.059317e-03
+restart -->     7.059317e-03
+

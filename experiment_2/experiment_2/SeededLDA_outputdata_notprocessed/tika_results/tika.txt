@@ -1,0 +1,210 @@
+Arguments:
+        Number of words      W = 2083
+        Number of docs       D = 170
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 18525
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 629.151909 Entropy (k|d): 1.751242 (w|k): 5.189676
+        Iter:20x:50x100x 100 /100, perp... (train) 417.897434 Entropy (k|d): 1.339925 (w|k): 4.401056
+Saving to models/
+Saving to models/ done
+Topic:0
+server  -->     2.049322e-01
+apache  -->     8.602467e-02
+jar     -->     3.939334e-02
+service -->     3.380566e-02
+cause   -->     3.169299e-02
+info    -->     2.780791e-02
+parse   -->     2.693901e-02
+stop    -->     2.535497e-02
+app     -->     1.998775e-02
+commons -->     1.593285e-02
+compile -->     1.419504e-02
+bundle  -->     1.390541e-02
+source  -->     1.245723e-02
+error   -->     1.071941e-02
+using   -->     9.850507e-03
+run     -->     9.560871e-03
+logging -->     9.271236e-03
+sax     -->     8.981600e-03
+snapshot        -->     8.691964e-03
+thread  -->     8.402329e-03
+build   -->     7.823058e-03
+duplicate       -->     6.374880e-03
+method  -->     5.795609e-03
+dependencies    -->     5.505973e-03
+please  -->     5.505973e-03
+detect  -->     5.216337e-03
+am      -->     5.216337e-03
+download        -->     4.926702e-03
+able    -->     4.926702e-03
+corrupt -->     4.637066e-03
+
+
+Topic:1
+http    -->     1.496239e-01
+https   -->     1.254425e-01
+trunk   -->     9.430177e-02
+apache  -->     9.269742e-02
+rev     -->     3.048439e-02
+test    -->     2.888004e-02
+main    -->     2.888004e-02
+parser  -->     2.852352e-02
+parsers -->     2.674091e-02
+view    -->     1.658004e-02
+amp     -->     1.604526e-02
+builds  -->     1.337135e-02
+pull    -->     1.319308e-02
+site    -->     1.284812e-02
+job     -->     1.283656e-02
+success -->     1.265830e-02
+integrated      -->     1.194526e-02
+example -->     1.141048e-02
+patch   -->     9.806129e-03
+web     -->     9.069788e-03
+nick    -->     8.914825e-03
+request -->     8.736564e-03
+io      -->     8.558303e-03
+changes -->     7.845259e-03
+resources       -->     7.666999e-03
+app     -->     7.488738e-03
+core    -->     6.953955e-03
+commit  -->     6.953955e-03
+fix     -->     5.706129e-03
+mime    -->     5.527869e-03
+
+
+Topic:2
+code    -->     2.174117e-01
+string  -->     5.222962e-02
+text    -->     5.004857e-02
+poi     -->     4.975419e-02
+parser  -->     2.767523e-02
+xml     -->     2.002120e-02
+using   -->     1.177839e-02
+slide   -->     1.118961e-02
+master  -->     1.118961e-02
+memory  -->     1.093411e-02
+re      -->     9.717684e-03
+author  -->     9.423298e-03
+document        -->     9.128912e-03
+test    -->     7.656981e-03
+buffer  -->     7.290387e-03
+page    -->     7.068209e-03
+id      -->     6.773823e-03
+format  -->     6.479437e-03
+parsing -->     6.479437e-03
+title   -->     6.479437e-03
+probably        -->     6.185051e-03
+stack   -->     6.075813e-03
+random  -->     6.075813e-03
+sample  -->     5.890665e-03
+output  -->     5.596279e-03
+body    -->     5.596279e-03
+pass    -->     5.596279e-03
+maybe   -->     5.301893e-03
+instead -->     5.007507e-03
+creator -->     5.007507e-03
+
+
+Topic:3
+file    -->     2.271361e-01
+can     -->     3.768916e-02
+files   -->     2.115050e-02
+user    -->     2.035281e-02
+could   -->     1.410124e-02
+list    -->     1.355899e-02
+information     -->     1.247535e-02
+extract -->     1.247449e-02
+magic   -->     1.220336e-02
+users   -->     1.181890e-02
+mime    -->     1.166111e-02
+thanks  -->     1.138998e-02
+documents       -->     1.057661e-02
+word    -->     9.763230e-03
+embedded        -->     9.763230e-03
+based   -->     8.407602e-03
+found   -->     7.865351e-03
+able    -->     7.594226e-03
+type    -->     7.323100e-03
+hi      -->     7.323100e-03
+makes   -->     7.223715e-03
+tried   -->     7.051975e-03
+valid   -->     7.051975e-03
+re      -->     6.780849e-03
+change  -->     6.780849e-03
+directory       -->     6.567260e-03
+people  -->     6.509724e-03
+solution        -->     6.509724e-03
+extracted       -->     5.696347e-03
+unit    -->     5.696347e-03
+
+
+Topic:4
+name    -->     1.306481e-01
+application     -->     1.112933e-01
+zip     -->     3.075735e-02
+content -->     3.044030e-02
+type    -->     2.822092e-02
+field   -->     2.661603e-02
+test    -->     2.378218e-02
+meta    -->     2.092869e-02
+encoding        -->     1.870932e-02
+detection       -->     1.553879e-02
+verify  -->     1.451928e-02
+document        -->     1.268531e-02
+middle  -->     1.209992e-02
+match   -->     1.173415e-02
+data    -->     1.141709e-02
+value   -->     1.141709e-02
+issue   -->     1.014888e-02
+stream  -->     8.880666e-03
+text    -->     8.880666e-03
+detect  -->     8.246559e-03
+li      -->     8.246559e-03
+tags    -->     7.929506e-03
+detector        -->     7.929506e-03
+no      -->     7.612452e-03
+container       -->     7.612452e-03
+iso     -->     7.612452e-03
+plain   -->     6.978345e-03
+attached        -->     6.344239e-03
+resource        -->     6.027185e-03
+doc     -->     6.027185e-03
+
+
+Topic:5
+update  -->     1.333348e-01
+write   -->     6.666833e-02
+parameter       -->     3.333511e-02
+component       -->     3.333511e-02
+patch   -->     2.548162e-02
+can     -->     2.283928e-02
+issue   -->     2.114063e-02
+test    -->     2.038567e-02
+version -->     1.981946e-02
+thanks  -->     1.698838e-02
+bug     -->     1.528973e-02
+fix     -->     1.528973e-02
+select  -->     1.428755e-02
+files   -->     1.189243e-02
+could   -->     1.189243e-02
+issues  -->     1.094874e-02
+fixed   -->     1.094874e-02
+unit    -->     9.816304e-03
+added   -->     9.627565e-03
+oracle  -->     9.525666e-03
+database        -->     9.525666e-03
+please  -->     9.061349e-03
+tests   -->     8.872610e-03
+thank   -->     8.495132e-03
+release -->     7.740177e-03
+check   -->     7.551439e-03
+push    -->     6.607745e-03
+looks   -->     6.607745e-03
+no      -->     6.041528e-03
+maven   -->     5.852790e-03

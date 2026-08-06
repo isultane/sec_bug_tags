@@ -1,0 +1,211 @@
+Arguments:
+        Number of words      W = 3446
+        Number of docs       D = 751
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 56950
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 936.566354 Entropy (k|d): 1.734687 (w|k): 5.613410
+        Iter:20x:50x100x 100 /100, perp... (train) 691.596240 Entropy (k|d): 1.407291 (w|k): 4.740259
+Saving to models/
+Saving to models/ done
+Topic:0
+cause   -->     9.519339e-02
+font    -->     8.990900e-02
+server  -->     5.480884e-02
+crash   -->     4.471270e-02
+function        -->     4.327040e-02
+fonts   -->     2.625529e-02
+daemon  -->     2.596273e-02
+type    -->     2.291162e-02
+form    -->     2.291162e-02
+stop    -->     1.730890e-02
+interactive     -->     1.610042e-02
+encoding        -->     1.238523e-02
+service -->     1.153968e-02
+embedded        -->     1.127067e-02
+value   -->     1.114683e-02
+characters      -->     1.052763e-02
+sun     -->     1.027995e-02
+unknown -->     9.041550e-03
+adobe   -->     9.041550e-03
+rendering       -->     8.174671e-03
+missing -->     8.050831e-03
+fields  -->     7.555472e-03
+table   -->     7.431632e-03
+glyph   -->     7.307792e-03
+hang    -->     7.212765e-03
+issues  -->     6.936272e-03
+windows -->     6.193233e-03
+amp     -->     5.697873e-03
+report  -->     5.450194e-03
+issue   -->     5.326354e-03
+
+
+Topic:1
+http    -->     1.465551e-01
+https   -->     1.199088e-01
+trunk   -->     3.196045e-02
+apache  -->     3.070095e-02
+branch  -->     2.794581e-02
+rev     -->     2.235681e-02
+patch   -->     2.125475e-02
+revision        -->     2.070372e-02
+test    -->     1.991654e-02
+fixed   -->     1.920807e-02
+index   -->     1.791808e-02
+fix     -->     1.755498e-02
+added   -->     1.582318e-02
+thanks  -->     1.440625e-02
+commit  -->     1.047033e-02
+changes -->     1.031289e-02
+change  -->     9.604429e-03
+build   -->     7.321596e-03
+processing      -->     7.085441e-03
+debug   -->     7.006723e-03
+tests   -->     6.770567e-03
+removed -->     6.140820e-03
+web     -->     5.973219e-03
+closed  -->     5.432355e-03
+set     -->     5.117482e-03
+avoid   -->     5.038763e-03
+token   -->     4.960045e-03
+files   -->     4.960045e-03
+called  -->     4.487735e-03
+correct -->     4.409016e-03
+
+
+Topic:2
+code    -->     1.924231e-01
+string  -->     5.190997e-02
+memory  -->     2.631332e-02
+image   -->     2.469273e-02
+stack   -->     1.664745e-02
+stream  -->     1.441001e-02
+images  -->     1.217758e-02
+space   -->     1.008044e-02
+line    -->     7.712714e-03
+color   -->     7.645065e-03
+width   -->     7.374467e-03
+length  -->     7.239168e-03
+bug     -->     6.900921e-03
+quote   -->     6.900921e-03
+value   -->     6.900921e-03
+page    -->     6.765622e-03
+method  -->     6.630323e-03
+wrong   -->     6.562673e-03
+filter  -->     6.495024e-03
+rendering       -->     6.156777e-03
+time    -->     6.089127e-03
+add     -->     5.818529e-03
+data    -->     5.615581e-03
+true    -->     5.615581e-03
+graphics        -->     5.547932e-03
+height  -->     5.344983e-03
+decode  -->     5.209684e-03
+shading -->     5.142035e-03
+values  -->     5.006736e-03
+correct -->     4.803788e-03
+
+
+Topic:3
+file    -->     2.185388e-01
+issue   -->     2.493281e-02
+information     -->     2.146198e-02
+version -->     1.926839e-02
+can     -->     1.833176e-02
+document        -->     1.801954e-02
+using   -->     1.690450e-02
+no      -->     1.190911e-02
+makes   -->     1.176967e-02
+please  -->     1.150769e-02
+could   -->     1.092787e-02
+user    -->     1.061583e-02
+access  -->     9.923520e-03
+files   -->     9.054596e-03
+thanks  -->     8.207164e-03
+page    -->     8.207164e-03
+local   -->     7.154290e-03
+close   -->     6.913714e-03
+am      -->     6.735307e-03
+sample  -->     6.556900e-03
+jar     -->     6.512298e-03
+test    -->     6.378493e-03
+fine    -->     6.378493e-03
+parser  -->     6.333891e-03
+attached        -->     6.244688e-03
+attach  -->     6.200086e-03
+resources       -->     6.021679e-03
+maybe   -->     5.754069e-03
+null    -->     5.441857e-03
+pages   -->     5.218848e-03
+
+
+Topic:4
+name    -->     1.094901e-01
+field   -->     9.744631e-02
+application     -->     4.489163e-02
+text    -->     3.397226e-02
+verify  -->     1.970918e-02
+can     -->     1.486353e-02
+method  -->     1.274033e-02
+null    -->     1.179669e-02
+page    -->     9.555545e-03
+sensitive       -->     8.760293e-03
+acrobat -->     8.258039e-03
+run     -->     8.140084e-03
+reader  -->     8.022128e-03
+subject -->     7.665404e-03
+no      -->     7.314398e-03
+system  -->     7.196443e-03
+result  -->     7.078487e-03
+character       -->     6.842577e-03
+date    -->     6.488712e-03
+framework       -->     6.252802e-03
+adobe   -->     6.252802e-03
+reflect -->     6.252802e-03
+using   -->     6.134846e-03
+quote   -->     5.663026e-03
+sun     -->     5.545071e-03
+mm      -->     5.427116e-03
+re      -->     5.309161e-03
+internal        -->     5.191205e-03
+values  -->     5.191205e-03
+extracted       -->     4.955295e-03
+
+
+Topic:5
+apache  -->     1.591006e-01
+update  -->     1.009910e-01
+write   -->     8.019899e-02
+parameter       -->     5.792180e-02
+oracle  -->     4.455549e-02
+error   -->     2.845522e-02
+lang    -->     2.004078e-02
+cos     -->     1.937648e-02
+parse   -->     1.527997e-02
+io      -->     1.516925e-02
+main    -->     1.395137e-02
+files   -->     1.339779e-02
+can     -->     1.328708e-02
+thread  -->     1.173705e-02
+object  -->     9.301285e-03
+process -->     9.190568e-03
+select  -->     8.911983e-03
+expected        -->     8.415554e-03
+actual  -->     8.194121e-03
+parser  -->     7.640539e-03
+info    -->     6.865524e-03
+type    -->     6.201226e-03
+operator        -->     6.201226e-03
+load    -->     5.536927e-03
+broken  -->     5.426211e-03
+message -->     5.426211e-03
+letter  -->     5.315494e-03
+id      -->     5.315494e-03
+capital -->     5.204778e-03
+read    -->     5.094062e-03
+

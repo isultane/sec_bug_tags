@@ -1,0 +1,210 @@
+Arguments:
+        Number of words      W = 2790
+        Number of docs       D = 619
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 39793
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 747.592746 Entropy (k|d): 1.728025 (w|k): 5.418867
+        Iter:20x:50x100x 100 /100, perp... (train) 509.090553 Entropy (k|d): 1.409426 (w|k): 4.413789
+Saving to models/
+Saving to models/ done
+Topic:0
+cause   -->     1.714303e-01
+oak     -->     9.791537e-02
+info    -->     6.505257e-02
+server  -->     4.945265e-02
+service -->     4.615596e-02
+apache  -->     3.376539e-02
+segment -->     3.151452e-02
+maven   -->     1.688382e-02
+resources       -->     1.575838e-02
+plugin  -->     1.553330e-02
+stop    -->     1.318902e-02
+test    -->     1.193190e-02
+run     -->     1.013119e-02
+kernel  -->     1.013119e-02
+doc     -->     9.906107e-03
+tests   -->     9.906107e-03
+function        -->     9.892331e-03
+crash   -->     9.892331e-03
+commons -->     9.681019e-03
+rep     -->     9.681019e-03
+jar     -->     9.455931e-03
+api     -->     8.330493e-03
+trunk   -->     7.205055e-03
+projects        -->     7.205055e-03
+clean   -->     6.529792e-03
+build   -->     6.304705e-03
+version -->     6.079617e-03
+snapshot        -->     5.854529e-03
+copy    -->     5.854529e-03
+warning -->     5.854529e-03
+
+
+Topic:1
+http    -->     1.649691e-01
+index   -->     1.057334e-01
+apache  -->     4.612867e-02
+close   -->     4.027738e-02
+test    -->     3.442609e-02
+fixed   -->     3.354839e-02
+bulk    -->     2.955001e-02
+revision        -->     2.379624e-02
+https   -->     2.102008e-02
+issue   -->     2.038298e-02
+release -->     1.921272e-02
+branch  -->     1.843255e-02
+patch   -->     1.648212e-02
+oak     -->     1.579947e-02
+fix     -->     1.482425e-02
+trunk   -->     1.131348e-02
+rev     -->     9.850653e-03
+looks   -->     9.460566e-03
+thanks  -->     9.168002e-03
+added   -->     6.729963e-03
+merged  -->     6.729963e-03
+look    -->     5.949790e-03
+remote  -->     5.733458e-03
+can     -->     5.169618e-03
+please  -->     4.682010e-03
+could   -->     4.389445e-03
+attached        -->     4.389445e-03
+bug     -->     4.389445e-03
+running -->     4.291924e-03
+re      -->     4.194402e-03
+
+
+Topic:2
+code    -->     1.769763e-01
+oak     -->     9.431266e-02
+apache  -->     5.775360e-02
+string  -->     5.558669e-02
+memory  -->     3.760305e-02
+document        -->     1.518967e-02
+commit  -->     1.448322e-02
+mongo   -->     1.404168e-02
+main    -->     1.218724e-02
+test    -->     1.077433e-02
+execute -->     1.062758e-02
+run     -->     1.050940e-02
+null    -->     1.024448e-02
+merge   -->     9.891256e-03
+false   -->     9.184801e-03
+base    -->     8.743267e-03
+tar     -->     8.390039e-03
+cache   -->     8.301732e-03
+path    -->     8.036811e-03
+session -->     7.595277e-03
+true    -->     7.330356e-03
+time    -->     7.065435e-03
+value   -->     7.065435e-03
+core    -->     6.800515e-03
+method  -->     6.800515e-03
+assert  -->     6.535594e-03
+lang    -->     6.270673e-03
+set     -->     5.829139e-03
+map     -->     5.387604e-03
+entry   -->     5.122684e-03
+
+
+Topic:3
+nam     -->     2.955095e-01
+access  -->     8.534843e-02
+file    -->     5.776225e-02
+user    -->     4.741743e-02
+makes   -->     2.845192e-02
+local   -->     2.672779e-02
+read    -->     1.468719e-02
+security        -->     1.432010e-02
+primary -->     1.175049e-02
+users   -->     1.121056e-02
+password        -->     1.121056e-02
+journal -->     9.547958e-03
+var     -->     9.180870e-03
+easier  -->     8.624354e-03
+design  -->     8.079606e-03
+equals  -->     8.079606e-03
+privileges      -->     7.762285e-03
+directory       -->     7.762285e-03
+concern -->     7.712518e-03
+permissions     -->     6.978342e-03
+setup   -->     6.978342e-03
+mapping -->     6.611254e-03
+observer        -->     6.611254e-03
+authentication  -->     6.038149e-03
+configuration   -->     5.509990e-03
+rename  -->     5.509990e-03
+identifiers     -->     4.775814e-03
+contract        -->     4.775814e-03
+equal   -->     4.408726e-03
+generate        -->     4.408726e-03
+
+
+Topic:4
+name    -->     2.119154e-01
+node    -->     3.786176e-02
+field   -->     2.425606e-02
+subject -->     2.042627e-02
+revision        -->     1.759274e-02
+changes -->     1.743977e-02
+application     -->     1.659649e-02
+verify  -->     1.659649e-02
+root    -->     1.285056e-02
+child   -->     1.162677e-02
+nodes   -->     1.147379e-02
+issue   -->     9.944055e-03
+test    -->     9.332161e-03
+check   -->     7.267016e-03
+version -->     7.190529e-03
+content -->     7.190529e-03
+oak     -->     6.578634e-03
+tests   -->     6.425660e-03
+added   -->     6.272687e-03
+time    -->     6.196200e-03
+probably        -->     6.196200e-03
+can     -->     5.737279e-03
+sensitive       -->     5.107142e-03
+middle  -->     5.107142e-03
+commit  -->     5.048897e-03
+read    -->     5.048897e-03
+remove  -->     5.048897e-03
+related -->     4.895923e-03
+cluster -->     4.819437e-03
+implementation  -->     4.819437e-03
+
+
+Topic:5
+query   -->     1.728937e-01
+update  -->     5.330381e-02
+write   -->     3.895303e-02
+property        -->     2.543803e-02
+patch   -->     1.746122e-02
+can     -->     1.737259e-02
+select  -->     1.640179e-02
+could   -->     1.462503e-02
+using   -->     8.864002e-03
+nodes   -->     8.598108e-03
+filter  -->     7.268641e-03
+instead -->     7.180010e-03
+tree    -->     6.825485e-03
+properties      -->     6.736854e-03
+change  -->     6.382330e-03
+hidden  -->     6.205067e-03
+database        -->     6.151224e-03
+current -->     6.116436e-03
+method  -->     6.027805e-03
+core    -->     5.939174e-03
+currently       -->     5.939174e-03
+solution        -->     5.850543e-03
+type    -->     5.761911e-03
+no      -->     5.673280e-03
+repository      -->     5.407387e-03
+approach        -->     5.407387e-03
+reference       -->     5.318756e-03
+data    -->     5.052862e-03
+copy    -->     4.786969e-03
+component       -->     4.784482e-03

@@ -1,0 +1,210 @@
+Arguments:
+        Number of words      W = 3258
+        Number of docs       D = 1083
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 55955
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 645.828628 Entropy (k|d): 1.719469 (w|k): 5.366665
+        Iter:20x:50x100x 100 /100, perp... (train) 428.901215 Entropy (k|d): 1.331515 (w|k): 4.433921
+Saving to models/
+Saving to models/ done
+Topic:0
+server  -->     8.773636e-02
+cause   -->     6.132129e-02
+stop    -->     5.188734e-02
+function        -->     5.000055e-02
+daemon  -->     2.169869e-02
+can     -->     1.735361e-02
+hang    -->     1.509493e-02
+issue   -->     1.313587e-02
+thanks  -->     1.042446e-02
+could   -->     1.012319e-02
+data    -->     9.761672e-03
+test    -->     9.339897e-03
+fix     -->     8.616855e-03
+build   -->     8.134827e-03
+re      -->     8.134827e-03
+am      -->     7.231024e-03
+run     -->     7.110517e-03
+crash   -->     6.604369e-03
+bug     -->     6.387475e-03
+error   -->     6.387475e-03
+time    -->     6.206714e-03
+no      -->     5.784940e-03
+service -->     5.660974e-03
+tests   -->     5.543926e-03
+actually        -->     5.363165e-03
+using   -->     5.242658e-03
+fixed   -->     5.242658e-03
+issues  -->     5.122151e-03
+look    -->     4.820884e-03
+yes     -->     4.579870e-03
+
+
+Topic:1
+https   -->     2.407303e-01
+pull    -->     1.494390e-01
+spark   -->     1.287223e-01
+apache  -->     1.229146e-01
+issue   -->     5.660361e-02
+request -->     5.625689e-02
+created -->     3.753377e-02
+http    -->     2.881545e-02
+user    -->     1.768381e-02
+resolved        -->     1.603687e-02
+fixed   -->     1.014255e-02
+remote  -->     9.848889e-03
+fix     -->     7.108715e-03
+script  -->     6.201474e-03
+patch   -->     5.288413e-03
+web     -->     5.107249e-03
+merged  -->     4.941688e-03
+browse  -->     4.508283e-03
+issues  -->     3.554791e-03
+index   -->     3.283541e-03
+commit  -->     2.861342e-03
+master  -->     2.861342e-03
+git     -->     2.427937e-03
+complete        -->     2.427937e-03
+network -->     2.371687e-03
+site    -->     2.189316e-03
+thanks  -->     1.994532e-03
+fixes   -->     1.647807e-03
+added   -->     1.561126e-03
+ticket  -->     1.474445e-03
+
+
+Topic:2
+code    -->     2.079026e-01
+memory  -->     3.378818e-02
+string  -->     3.160834e-02
+version -->     1.828941e-02
+spark   -->     1.525335e-02
+hive    -->     1.344616e-02
+maven   -->     1.048238e-02
+api     -->     9.759510e-03
+test    -->     8.819775e-03
+buffer  -->     8.720066e-03
+stack   -->     7.902628e-03
+example -->     7.518604e-03
+method  -->     7.157167e-03
+can     -->     6.506581e-03
+object  -->     6.434294e-03
+map     -->     6.362007e-03
+execute -->     6.267751e-03
+path    -->     6.145145e-03
+value   -->     6.145145e-03
+add     -->     6.145145e-03
+build   -->     6.072857e-03
+line    -->     5.711421e-03
+project -->     5.711421e-03
+type    -->     5.277697e-03
+compile -->     5.277697e-03
+docs    -->     5.133122e-03
+dependencies    -->     4.988548e-03
+classes -->     4.843973e-03
+jars    -->     4.771686e-03
+support -->     4.771686e-03
+
+
+Topic:3
+file    -->     8.962615e-02
+user    -->     6.887687e-02
+local   -->     6.426592e-02
+spark   -->     5.938779e-02
+users   -->     3.227746e-02
+yarn    -->     2.269803e-02
+cluster -->     1.903719e-02
+can     -->     1.708474e-02
+io      -->     1.594581e-02
+directory       -->     1.239274e-02
+master  -->     1.163415e-02
+set     -->     9.274944e-03
+makes   -->     9.222713e-03
+using   -->     9.112240e-03
+python  -->     8.868184e-03
+information     -->     8.646344e-03
+access  -->     8.069975e-03
+mode    -->     7.973312e-03
+running -->     7.159792e-03
+add     -->     6.753032e-03
+client  -->     6.671680e-03
+broadcast       -->     6.671680e-03
+standalone      -->     5.451399e-03
+configuration   -->     5.370047e-03
+submit  -->     5.288695e-03
+could   -->     5.207343e-03
+driver  -->     4.881935e-03
+sun     -->     4.719231e-03
+bit     -->     4.637879e-03
+no      -->     4.556527e-03
+
+
+Topic:4
+application     -->     1.294615e-01
+name    -->     1.145238e-01
+info    -->     7.009664e-02
+home    -->     2.949115e-02
+task    -->     2.881061e-02
+executor        -->     2.699584e-02
+field   -->     2.116293e-02
+stage   -->     1.769514e-02
+verify  -->     1.742850e-02
+spark   -->     1.678776e-02
+resources       -->     1.338507e-02
+tasks   -->     1.213741e-02
+id      -->     1.157029e-02
+job     -->     1.088976e-02
+log     -->     1.020922e-02
+driver  -->     9.982371e-03
+worker  -->     9.528678e-03
+starting        -->     9.301832e-03
+failed  -->     8.848139e-03
+set     -->     8.848139e-03
+actor   -->     8.848139e-03
+error   -->     8.621293e-03
+process -->     8.281024e-03
+finished        -->     7.487062e-03
+subject -->     7.470004e-03
+size    -->     7.033369e-03
+trace   -->     6.693100e-03
+master  -->     6.466253e-03
+message -->     6.352830e-03
+result  -->     6.239407e-03
+
+
+Topic:5
+spark   -->     1.108983e-01
+apache  -->     8.158165e-02
+update  -->     7.415810e-02
+write   -->     7.078732e-02
+select  -->     6.741654e-02
+jar     -->     5.189039e-02
+lib     -->     4.205575e-02
+query   -->     3.370874e-02
+apply   -->     3.100348e-02
+parameter       -->     2.865257e-02
+collection      -->     2.706962e-02
+run     -->     1.676666e-02
+lang    -->     1.573637e-02
+command -->     1.217716e-02
+component       -->     1.179867e-02
+send    -->     9.273601e-03
+received        -->     8.805285e-03
+mutable -->     8.617958e-03
+oracle  -->     8.427888e-03
+assembly        -->     8.336969e-03
+answer  -->     8.336969e-03
+commons -->     7.962315e-03
+read    -->     7.213009e-03
+executor        -->     6.182713e-03
+map     -->     6.089050e-03
+error   -->     5.901723e-03
+core    -->     5.808060e-03
+netty   -->     5.714397e-03
+thread  -->     5.527070e-03
+started -->     5.246080e-03

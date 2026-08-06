@@ -1,0 +1,699 @@
+CR,CM,time
+http://sealytics.github.io/ontologies/release-model#Bug-776928b4-b413-4424-9cc1-2e1a96e89654,fixed with http://svn.apache.org/r1551865 in 0.12.0 and http://svn.apache.org/r1551872 in trunk.,1386849728939
+http://sealytics.github.io/ontologies/release-model#Bug-278f268b-be26-4394-9dac-14e80f653854,"regarding {code} 
+public TripleCollection getRdfGraph()
+{ - return graphNode.getGraph(); + return graphNode.getNodeContext(); } 
+{code}
+
+The Clerezza GraphNode#getNodeContext() method includes both incoming and outgoing triples. However the Representation only cares about outgoing. Because of that I would prefer a custom implementation that ignores incoming relations (triples where the current node in the Object).",1403525475172
+http://sealytics.github.io/ontologies/release-model#Bug-278f268b-be26-4394-9dac-14e80f653854,"this patch contains some others modifications : 
+
+******
+commons/namespaceprefix/service/src/main/java/org/apache/stanbol/commons/namespaceprefix/NamespacePrefixService.java
+
+=&gt; add  a method to the interface to import mapping from inputstreams
+
+******
+entityhub/jersey/pom.xml
+
+=&gt; move all stanbol&apos;s module dependencies to a unified (0.12.1-SNAPSHOT) one.
+This was done throw maven property... Seems to remember that it&apos;s not really like here... but found it a really easy and clean way to stop the hassle on version numbering inside each module...
+
+*****
+entityhub/jersey/src/test/java/org/apache/stanbol/entityhub/jersey/writers/QueryResultsToRDFTest.java
+
+=&gt; Test case. 
+This also show a commented potential problem when serializing RDFQueryResultsList to Json (that don&apos;t append when serializing QueryResultList.
+
+****
+entityhub/model/clerezza/src/main/java/org/apache/stanbol/entityhub/model/clerezza/RdfRepresentation.java
+
+=&gt; contains the fix : 
+     public TripleCollection getRdfGraph(){
+-        return graphNode.getGraph();
++       return graphNode.getNodeContext();
+     }
+
+=&gt; and a toJson method to make the toString result more human readable.",1403525475172
+http://sealytics.github.io/ontologies/release-model#Bug-278f268b-be26-4394-9dac-14e80f653854,integration test seems to fail now because of #STANBOL-1356,1403525475172
+http://sealytics.github.io/ontologies/release-model#Bug-278f268b-be26-4394-9dac-14e80f653854,"regarding the RdfRepresentation#toJson and toString method:
+
+You can use {code} org.apache.stanbol.entityhub.servicesapi.util.ModelUtils#getRepresentationInfo(Representation rep){code} for getting human readable details for a Representation.",1403525475172
+http://sealytics.github.io/ontologies/release-model#Bug-efb81c62-bf3a-40a5-87e9-e02a6d7055c4,Applied the patch with http://svn.apache.org/r1518628,1374835591258
+http://sealytics.github.io/ontologies/release-model#Bug-efb81c62-bf3a-40a5-87e9-e02a6d7055c4,"As noticed by Benjamin GrÃ¶ssing[1] this introduced a small error in the pom.xml file of the topic engine.
+
+[1] http://markmail.org/message/d32fwphmm6zxffub",1374835591258
+http://sealytics.github.io/ontologies/release-model#Bug-efb81c62-bf3a-40a5-87e9-e02a6d7055c4,"Hi Sebasitan,
+
+Thank you for this patch. Separating API and implementation should also allow to have different implementations (e.g. to use different classifiers).
+
+Had a first look at the patch and he looks good. Will make some more checks and commit it to trunk if I do not find any issues.",1374835591258
+http://sealytics.github.io/ontologies/release-model#Bug-efb81c62-bf3a-40a5-87e9-e02a6d7055c4,"fixed the Private-Package statements with
+
+    http://svn.apache.org/r1543344 in the release-0.12 branch
+    http://svn.apache.org/r1543347 in the trunk ",1374835591258
+http://sealytics.github.io/ontologies/release-model#Bug-efb81c62-bf3a-40a5-87e9-e02a6d7055c4,preliminary patch that separates API and implementation into two modules,1374835591258
+http://sealytics.github.io/ontologies/release-model#Bug-bd3cb212-4d85-4888-9eea-c9ad899e0dd1,fixed with http://svn.apache.org/r1442527,1360042368192
+http://sealytics.github.io/ontologies/release-model#Bug-bd3cb212-4d85-4888-9eea-c9ad899e0dd1,"forgot to mark as resolved: was resolved on 19/Apr/13 http://svn.apache.org/r1442527
+",1360042368192
+http://sealytics.github.io/ontologies/release-model#Bug-09962ff0-eaa9-44bc-9307-c1d2f24a4f7b,Done. See also STANBOL-1253,1390228819315
+http://sealytics.github.io/ontologies/release-model#Bug-3f096816-1d1b-4eaa-8ff4-26c8ac9ac24d,"fixed with 
+
+* http://svn.apache.org/r1535634 in 0.12.0 and 
+* http://svn.apache.org/r1535642 in the trunk",1382677257414
+http://sealytics.github.io/ontologies/release-model#Bug-901ac0cd-3c8e-4b59-bb12-1fb11663e81b,"fixed
+
+with http://svn.apache.org/r1551671 in the 0.12 branch
+with http://svn.apache.org/r1551673 in the trunk",1387309232563
+http://sealytics.github.io/ontologies/release-model#Bug-ce8ccaf6-cbc6-4161-b479-f3ee210eedff,This should be fixed now in rev 1533394,1380276797500
+http://sealytics.github.io/ontologies/release-model#Bug-32f3cd34-1641-46cb-983c-b81ddc205b8b,Starting with http://svn.apache.org/r1532986 local names are converted to full URIs,1368525305903
+http://sealytics.github.io/ontologies/release-model#Bug-314a53dc-fe64-45e5-bd30-93c1100d8284,"I do see that a &quot;SparqlMenuItem&quot; defined in o.a.s.commons.web.sparql, but I can not remember how to register it with the navigation menu without using the deprecated FrameworkFragment. [~reto] can you please have a look at this.",1398241779352
+http://sealytics.github.io/ontologies/release-model#Bug-314a53dc-fe64-45e5-bd30-93c1100d8284,"Added 
+
+@Component
+@Service(NavigationLink.class)
+
+as annotations to the class",1398241779352
+http://sealytics.github.io/ontologies/release-model#Bug-ea08036a-9bee-4e78-9c49-6f130d5674cc,set &quot;Priority&quot; to &quot;Trivial &quot; this only affects a DEBUG level logging not to be printed,1396809828103
+http://sealytics.github.io/ontologies/release-model#Bug-ea08036a-9bee-4e78-9c49-6f130d5674cc,I&apos;ve added the patch file.,1396809828103
+http://sealytics.github.io/ontologies/release-model#Bug-ea08036a-9bee-4e78-9c49-6f130d5674cc,resolved with http://svn.apache.org/r1587541 in 0.12 and http://svn.apache.org/r1587542 in trunk,1396809828103
+http://sealytics.github.io/ontologies/release-model#Bug-4158cdce-52b7-4206-85a2-cba7d4b2c7ff,fixed with http://svn.apache.org/r1587532 in 0.12 and http://svn.apache.org/r1587534 in trunk,1396813438746
+http://sealytics.github.io/ontologies/release-model#Bug-4158cdce-52b7-4206-85a2-cba7d4b2c7ff,I&apos;ve added the patch file.,1396813438746
+http://sealytics.github.io/ontologies/release-model#Bug-c09d08a6-e413-43f7-a159-4c3f35894990,"Sorry for that... just wanted to extract this little fix from some others modifications.
+
+fixed with : 
+1590973 on 0.12
+1590976 on trunk.
+
+I don&apos;t see trunk building fail as it&apos;s also should, there is no more jenkin&apos;s trunk building ? 
+
+Sorry for disturbing.
+",1398698419414
+http://sealytics.github.io/ontologies/release-model#Bug-c09d08a6-e413-43f7-a159-4c3f35894990," http://svn.apache.org/r1590670 broke the build for the 0.12 branch
+{code}
+    COMPILATION ERROR :
+        UserResource.java:[801,1] error: cannot find symbol
+{code}",1398698419414
+http://sealytics.github.io/ontologies/release-model#Bug-c09d08a6-e413-43f7-a159-4c3f35894990,"revision 1590670 for 0.12
+revision 1590672 for trunk",1398698419414
+http://sealytics.github.io/ontologies/release-model#Bug-c53d2db5-ad3f-4380-bc0b-23b497bbde77,changed behavior with http://svn.apache.org/r1608340 in 0.12 and merged with http://svn.apache.org/r1608342 to trunk,1404709620476
+http://sealytics.github.io/ontologies/release-model#Bug-120f4db2-b06c-4d02-a785-220e3b9da212,resolved with http://svn.apache.org/r1532191,1381518711371
+http://sealytics.github.io/ontologies/release-model#Bug-120f4db2-b06c-4d02-a785-220e3b9da212,"There are two possible strategies: 
+
+a) Return a default format when the requested cannot be satisfied
+b) Return 406 Not Acceptable ",1381518711371
+http://sealytics.github.io/ontologies/release-model#Bug-120f4db2-b06c-4d02-a785-220e3b9da212,"This fix also requires to update the according integration tests
+
+* org.apache.stanbol.enhancer.it.DefaultChainTest.testInvalidFormat
+* org.apache.stanbol.enhancer.it.StatelessEngineTest.testInvalidFormat
+
+to check for 406 instead of 500",1381518711371
+http://sealytics.github.io/ontologies/release-model#Bug-120f4db2-b06c-4d02-a785-220e3b9da212,updated integration test with http://svn.apache.org/r1532191. Waiting for Jenkins for confirmation before resolving ...,1381518711371
+http://sealytics.github.io/ontologies/release-model#Bug-120f4db2-b06c-4d02-a785-220e3b9da212,fixed in r1531400,1381518711371
+http://sealytics.github.io/ontologies/release-model#Bug-684c1025-6a6d-4d65-aeab-16de9e67a485,fixed with http://svn.apache.org/r1598019 in 0.12 and http://svn.apache.org/r1598026 in trunk,1401283398538
+http://sealytics.github.io/ontologies/release-model#Bug-744a92d0-0181-4baa-999d-220575ea0fd6,"You are right. This is a design issue that requires to change the interface of the RunSingleSPARQL. Looks like in Jena one has to return the QueryExecution as there is no way to call close() on the ResultSet (e.g. as in Sesame).
+
+Because of that returning the ResultSet is not an option as it would not allow to correctly close the Execution. Returning the QueryExecution is much less elegant but can not be avoided.",1396222317199
+http://sealytics.github.io/ontologies/release-model#Bug-744a92d0-0181-4baa-999d-220575ea0fd6,"I&apos;ve removed the runSPARQL method and created a method to retrieve QueryExecution. So close method could be run at test method. Returning Resultset should be done at another architecture that collects ResultSet objects, closes the QueryExecution and returns collected ResultSet.
+
+Tests are passed.",1396222317199
+http://sealytics.github.io/ontologies/release-model#Bug-744a92d0-0181-4baa-999d-220575ea0fd6,fixed with http://svn.apache.org/r1587815 for 0.12 and http://svn.apache.org/r1587816 in trunk,1396222317199
+http://sealytics.github.io/ontologies/release-model#Bug-e43698f3-3435-4db1-94cf-a55ddb4a1a32,fixed with http://svn.apache.org/r1574911 in 0.12 and http://svn.apache.org/r1574913 in trunk,1394117754603
+http://sealytics.github.io/ontologies/release-model#Bug-123488c5-7202-4cb4-829c-f87f87c8f757,using tradition mode.,1399887795550
+http://sealytics.github.io/ontologies/release-model#Bug-b18894e4-2b49-416d-9960-f95bead83d2e,"Hello Rupert,
+
+Thanks for your response.
+OS: Ubuntu 13.10 x64
+Java version: &quot;1.7.0_25&quot;
+
+I have tried the following MAVEN_OPTS:
+export MAVEN_OPTS=&quot;-Xmx2048M -XX:MaxPermSize=2048M&quot;
+export MAVEN_OPTS=&quot;-Xmx2048M -XX:MaxPermSize=1024M&quot;
+
+I have tried Surefire 2.13, 2.14, 2.15 and 2.16
+
+Do you think more than 2GB memory might be necessary?
+Still no error output or JVM crashlog in working directory.",1390255646791
+http://sealytics.github.io/ontologies/release-model#Bug-b18894e4-2b49-416d-9960-f95bead83d2e,"I have update the version of the Surefire to the most current 2.16 with  http://svn.apache.org/r1560291, but I am still unable to reproduce the reported issue in my environment (java version &quot;1.7.0_45&quot; on Mac 10.9)
+
+Can you please provide more details about your OS, Java version and also the configured MAVEN_OPTS. If the JVM crashes during running the tests you should also see a crash log in the working directory.",1390255646791
+http://sealytics.github.io/ontologies/release-model#Bug-b18894e4-2b49-416d-9960-f95bead83d2e,"Hi Vahid, 
+
+Is there a crash log of the JVM? If not maybe the /var/log/syslog file can provide you some information why the kernel killed the build.
+
+IMO it is not sure that this is related to unit tests as based on the logs in your initial posts those are already completed before the &apos;killed&apos;. ",1390255646791
+http://sealytics.github.io/ontologies/release-model#Bug-8f9a0284-6c68-43d4-b1b5-43ccb1ad19b3,fixed in both trunk and 0.12.0 releasing with http://svn.apache.org/r1539337,1383739055698
+http://sealytics.github.io/ontologies/release-model#Bug-5d114a8d-d7e0-40f2-bfa5-9e91051c96fb,fixed with http://svn.apache.org/r1563781 in 0.12 and http://svn.apache.org/r1564226 in trunk,1391176925410
+http://sealytics.github.io/ontologies/release-model#Bug-ed8a56ea-9611-4547-b94c-5e8a69249cfb,fixed with http://svn.apache.org/r1551517 in trunk and http://svn.apache.org/r1551862 in the 0.12.0 branch ,1386945688113
+http://sealytics.github.io/ontologies/release-model#Bug-a4daff0f-2360-4833-afcc-a466027e9bfd,[~a.kuckartz@ping.de] Is this issue still valid because I get error for integration tests at trunk?,1382427420970
+http://sealytics.github.io/ontologies/release-model#Bug-a4daff0f-2360-4833-afcc-a466027e9bfd,"[~kamaci] A number of the difficult problems have been resolved by [~rwesten]. But not all of them are resolved. In other words: Yes, I also still see integration test issues.",1382427420970
+http://sealytics.github.io/ontologies/release-model#Bug-a4daff0f-2360-4833-afcc-a466027e9bfd,"[~rwesten] I&apos;ve re-run clean install and the result it: 
+
+{quote}
+[INFO] Apache Stanbol Integration Tests .................. SUCCESS [7:31.524s] 
+{quote}
+
+so it seems that there is not a problem anymore.",1382427420970
+http://sealytics.github.io/ontologies/release-model#Bug-a4daff0f-2360-4833-afcc-a466027e9bfd,[~kamaci] if you do have integration test problems please attach additional details to this issue (including the platform you are using). The main issue with fixing the issues reported by Andreas was to re-produce them.,1382427420970
+http://sealytics.github.io/ontologies/release-model#Bug-4e1bc9c6-3e4b-4cc8-a0da-94663706d279,Patch.,1385214153329
+http://sealytics.github.io/ontologies/release-model#Bug-4e1bc9c6-3e4b-4cc8-a0da-94663706d279,"correction fixed with http://svn.apache.org/r1551875, the above was for STANBOL-1221",1385214153329
+http://sealytics.github.io/ontologies/release-model#Bug-4e1bc9c6-3e4b-4cc8-a0da-94663706d279,"fixed with http://svn.apache.org/r1551874.
+
+Thx Gregor for reporting!",1385214153329
+http://sealytics.github.io/ontologies/release-model#Bug-5d25ce45-82a9-4a52-a770-c4c86bd8d791,fixed with http://svn.apache.org/r1539369 in both trunk and the 0.12.0 releasing branch,1383750831711
+http://sealytics.github.io/ontologies/release-model#Bug-047a487f-6f3e-49a9-bf66-9080f6cc66ae,fixed with http://svn.apache.org/r1539365 in both trunk and the 0.12.0 releasing branch,1383749559136
+http://sealytics.github.io/ontologies/release-model#Bug-244ac7f4-0a2f-4d32-acf7-b4443ef0984b,Thanks  Viktor for the patch. I will download a new dump and test the updated script. Most likely I will keep both as Google might decide to switch back to the old format.,1384951485785
+http://sealytics.github.io/ontologies/release-model#Bug-244ac7f4-0a2f-4d32-acf7-b4443ef0984b,"tested the new  script with &quot;freebase-rdf-2013-11-17-00-00.gz&quot;. Works perfectly.
+
+here the first to lines of the prodices incoming_links.txt file
+
+8207306 m.0kpv11
+3465907 m.019h
+2667804 m.0775xvm
+1889043 m.01xryvm
+1606734 m.09jd9nh
+1522976 m.05zppz
+1340895 m.0jst35z
+1334458 m.0g4g
+1191781 m.04l
+1077343 m.09gn
+
+",1384951485785
+http://sealytics.github.io/ontologies/release-model#Bug-150bc656-be19-4f74-b585-9e3065b76b1f,Patch.,1385214406850
+http://sealytics.github.io/ontologies/release-model#Bug-150bc656-be19-4f74-b585-9e3065b76b1f,"fixed with http://svn.apache.org/r1551874.
+
+Thx Gregor for reporting!
+",1385214406850
+http://sealytics.github.io/ontologies/release-model#Bug-5b2acde4-9a9f-4ba2-b410-c8bc7dfb61b1,"This is because the  EmbeddedSolrServer uses
+
+   catch( Exception ex ) {
+      throw new SolrServerException( ex );
+    }
+
+and therefore replaces Security related exceptions with SolrServerException. IMO this is not a bug of Stanbol but should be fixed in Solr",1368902373901
+http://sealytics.github.io/ontologies/release-model#Bug-5d0701ca-cb3a-48a3-b102-2010d7ecf9b8,fixed with http://svn.apache.org/r1599433 in 0.12.1 and http://svn.apache.org/r1599441 in trunk,1401778467238
+http://sealytics.github.io/ontologies/release-model#Bug-d30749fd-91a7-4851-90bf-321089eb6343,fixed with http://svn.apache.org/r1597256 in 0.12 (does not apply to trunk as there everything uses 1.0.0-SNAPSHOT),1400908393100
+http://sealytics.github.io/ontologies/release-model#Bug-bb25afeb-8248-40f7-88b7-8e6a51b23bab,"fixed with  http://svn.apache.org/r1587824 in 0.12 and http://svn.apache.org/r1587825 in trunk
+
+The issue was calling 
+
+{code}
+Builder builder = new Builder()
+[..]
+Jar jar = builder.build();
+builder.close()
+jar.write({file})
+{code}
+
+as builder.close() not only closes the builder, but also all Jar instances created by the builder. Because of that one need to call jar.write(..) first and only close the builder after that.
+",1395990236299
+http://sealytics.github.io/ontologies/release-model#Bug-bb25afeb-8248-40f7-88b7-8e6a51b23bab,"regarding
+        try {
+             builder.addClasspath(new File(config.getDestinationFolder(),CONFIG_ROOT));
+         } catch (IOException e) {
+-            log.warn(&quot;Unable to build OSGI Bundle for Indexed Referenced Site &quot;+config.getName(),e);
++            log.warn(&quot;(builder.addClasspath) Unable to build OSGI Bundle for Indexed Referenced Site &quot;+config.getName(),e);
+             builder.close();
++            //?? why not throwing an exception here ??
+             return;
+
+The reason why I decided to just log a WARN and not stop the process is that at this point the finallization phase has already done a lot of work (optimizing the SolrCore, building FST models, ...). So IMO it was better to notify the user why the bundle was not build while still continuing the &quot;solrindex.zip&quot; archive with the SolrCore.",1395990236299
+http://sealytics.github.io/ontologies/release-model#Bug-bb25afeb-8248-40f7-88b7-8e6a51b23bab,"from 0.12.x/entityhub/indexing/core
+
+",1395990236299
+http://sealytics.github.io/ontologies/release-model#Bug-ed654bc1-e9f7-436e-a277-8c152b538583,I&apos;ve added the patch file.,1396797379285
+http://sealytics.github.io/ontologies/release-model#Bug-ed654bc1-e9f7-436e-a277-8c152b538583,"fixed with http://svn.apache.org/r1587573 in 0.12 and merged to 1.0 with http://svn.apache.org/r1587574.
+
+I have not used the patch in this case: Instead the MultiThreadedTestBase config now already trims the configured property",1396797379285
+http://sealytics.github.io/ontologies/release-model#Bug-f2c7fbc1-8e0e-4ded-832b-73e23c083b1a,fixed with http://svn.apache.org/r1588139,1397715446443
+http://sealytics.github.io/ontologies/release-model#Bug-f2c7fbc1-8e0e-4ded-832b-73e23c083b1a,"Backward Compatibility:
+
+With updating the Felix module versions with STANBOL-1322 in the 0.12.1 release the `o.a.s.entityhub.site.linkeddata` module 0.12.0 would no longer work (as for the reason described by this issue). Because of that empty service configuration files for
+
+* org.apache.stanbol.entityhub.dereferencer.CoolUriDereferencer
+* org.apache.stanbol.entityhub.dereferencer.SparqlDereferencer
+* org.apache.stanbol.entityhub.searcher.SparqlSearcher
+* org.apache.stanbol.entityhub.searcher.VirtuosoSearcher
+* org.apache.stanbol.entityhub.searcher.LarqSearcher
+
+will be added to the `o.a.s.entityhub.defaults` module. This ensures that users using the 0.12.1 version of the `o.a.s.entityhub.defaults`module will still be able to use earlier versions of the Entityhub. Users that do not want to use the 0.12.1 version of the `o.a.s.entityhub.defaults` module can also provide the configurations listed above by some other means.",1397715446443
+http://sealytics.github.io/ontologies/release-model#Bug-3b0fc908-63de-4b9a-abeb-3bd2cce1c281,fixed with http://svn.apache.org/r1539026 in both the trunk and the 0.12.0 release branch,1383657290248
+http://sealytics.github.io/ontologies/release-model#Bug-4ae8c6d1-5597-4f06-bc69-78cdd9163297,[~rwesten] Sorry for not making that clear: _those_ errors were indeed the result of deliberately created syntactic errors (which I mentioned in my mail). The problems this Jira issue is about did _not_ leave such traces in the error log. If there are any traces in the error.log they must be _before_ the first hit on &quot;Run SPARQL query&quot;.,1398241554234
+http://sealytics.github.io/ontologies/release-model#Bug-4ae8c6d1-5597-4f06-bc69-78cdd9163297,I sent Rupert an error.log.,1398241554234
+http://sealytics.github.io/ontologies/release-model#Bug-4ae8c6d1-5597-4f06-bc69-78cdd9163297,"Andreas, I attached the interesting part of your log to the issue. As you can see in the Exception your SPARQL query could not be parsed.
+
+So please check that the query you where sending confirmed to SPARQL 1.0",1398241554234
+http://sealytics.github.io/ontologies/release-model#Bug-4ae8c6d1-5597-4f06-bc69-78cdd9163297,"The WARNING is written by Jersey because the `org.apache.stanbol.commons.httpqueryheaders` (CORS support for Internet Explorer) consumes the original ServletRequests and warps it with it with an custom one.
+
+I do not think this is releated to the &quot;Invalid query.&quot; You should find the real problem in `./stanbol/log/error.log`.",1398241554234
+http://sealytics.github.io/ontologies/release-model#Bug-8fe78809-4655-4923-af88-71e73789614b,fixed with http://svn.apache.org/r1538520 and merged to 0.12 with http://svn.apache.org/r1538524,1383552833982
+http://sealytics.github.io/ontologies/release-model#Bug-6ed9497f-f087-4f07-b339-b45805b23f56,fixed with http://svn.apache.org/r1539369 in both trunk and the 0.12.0 releasing branch,1383749732118
+http://sealytics.github.io/ontologies/release-model#Bug-5fa7a601-b0b3-45f1-8913-fc99f6d273b6,"fixed with http://svn.apache.org/r1578255
+
+the SolrCore field is now also initialized in case a custom Solr core configuration is used.",1395041463669
+http://sealytics.github.io/ontologies/release-model#Bug-c866c37a-b330-4c3b-b9d1-2bb276834056,"Moved in trunk, version number and references to parent fixed accordingly",1389609238249
+http://sealytics.github.io/ontologies/release-model#Bug-c866c37a-b330-4c3b-b9d1-2bb276834056,"Thank you [~gregmuellegger], changes applied, opened STANBOL-1260 for that.",1389609238249
+http://sealytics.github.io/ontologies/release-model#Bug-c866c37a-b330-4c3b-b9d1-2bb276834056,The build for the HermiT reasoner in the 0.12 release branch is currently broken. Here is a patch that fixes the problem. It should be applied before the reasoner gets merged into trunk.,1389609238249
+http://sealytics.github.io/ontologies/release-model#Bug-8f925586-ae8e-42e6-89ec-ca2534654253,fixed with http://svn.apache.org/r1572944 in 0.12 and http://svn.apache.org/r1572948 in trunk,1393594530871
+http://sealytics.github.io/ontologies/release-model#Bug-602f2c2b-5af0-47e0-bf53-4700204e8471,"applied path with http://svn.apache.org/r1560304, fixed an other broken link with http://svn.apache.org/r1560306 and published changes with revision 895080
+
+[~kinow]: Thanks for notice and path",1382567649443
+http://sealytics.github.io/ontologies/release-model#Bug-94a82691-b9ea-40e6-bcf5-4ee0b7daf824,changed with http://svn.apache.org/r1587860 in 0.12; merged with http://svn.apache.org/r1587862 to trunk,1397645085041
+http://sealytics.github.io/ontologies/release-model#Bug-c4327c50-65a2-49f9-b1c4-0e21188b20d2,fixed with http://svn.apache.org/r1564363 in 0.12.0 and http://svn.apache.org/r1564364 in trunk,1391529209200
+http://sealytics.github.io/ontologies/release-model#Bug-6fe67eb7-6444-4594-92ce-8bf023a1fc09,For apply in trunk if no problems with other maven version than 3.1,1384774776464
+http://sealytics.github.io/ontologies/release-model#Bug-6fe67eb7-6444-4594-92ce-8bf023a1fc09,"Benjamin GrÃ¶ssing reported the same issue today on the mailing list [1]. He also solved it by upgrading the shade plugin.
+Building the 0.12 branch still works fine with &quot;Apache Maven 3.0.4 (r1232337; 2012-01-17 09:44:56+0100)&quot;. So it looks like the change is backward compatible.
+
+
+[1] http://markmail.org/message/d32fwphmm6zxffub",1384774776464
+http://sealytics.github.io/ontologies/release-model#Bug-6fe67eb7-6444-4594-92ce-8bf023a1fc09,"Note that Stanbol is affected by the bug described in [1] if one upgrades the Shade plugin. So we will need to apply the suggested workaround  (adding &lt;createDependencyReducedPom&gt;false&lt;/createDependencyReducedPom&gt; to the plugin configuration).
+
+This needs to be done for both the releasing-0.12 branch and the trunk.
+
+If you do not see the issue ATM its because the pom.xml file do override the plugin version defined in the parent with 1.7.2
+
+
+[1]http://mail-archives.apache.org/mod_mbox/maven-dev/201306.mbox/%3CCDD4FE7A.23496%25rvesse@yarcdata.com%3E",1384774776464
+http://sealytics.github.io/ontologies/release-model#Bug-6fe67eb7-6444-4594-92ce-8bf023a1fc09,"Committed revision 1542995.
+in branch 0.12
+
+Attaching patch for apply in trunk if no breaks with other mvn versions.
+
+++",1384774776464
+http://sealytics.github.io/ontologies/release-model#Bug-6fe67eb7-6444-4594-92ce-8bf023a1fc09,with http://svn.apache.org/r1544186 and http://svn.apache.org/r1544187 I updated the launchers pom files as described in the above comment,1384774776464
+http://sealytics.github.io/ontologies/release-model#Bug-6fe67eb7-6444-4594-92ce-8bf023a1fc09,"Thanks for look at this quickly.
+Updated parent&apos;s pom shade plugin version in trunk @revision 1544218
+
+++",1384774776464
+http://sealytics.github.io/ontologies/release-model#Bug-9436029b-5830-4dfb-a844-a6139da0d98a,fixed the issues described in the above comment with http://svn.apache.org/r1546706 and merged them back to the 0.12 branch with http://svn.apache.org/r1546708,1385127724883
+http://sealytics.github.io/ontologies/release-model#Bug-9436029b-5830-4dfb-a844-a6139da0d98a,implemented with http://svn.apache.org/r1544960 (both trunk and 0.12 branch),1385127724883
+http://sealytics.github.io/ontologies/release-model#Bug-9436029b-5830-4dfb-a844-a6139da0d98a,"Reopen, because of a bug that can cause confidences of suggestions to be adjusted multiple times. In addition there is also a possibility that the confidence of non fise:EntityAnnotations is modified.",1385127724883
+http://sealytics.github.io/ontologies/release-model#Bug-2940cfce-3433-49b6-9790-879bb8c1b7c7,I&apos;ve added the patch file.,1396205650147
+http://sealytics.github.io/ontologies/release-model#Bug-2940cfce-3433-49b6-9790-879bb8c1b7c7,Already added the bundlelist to the bundlelist reactor with http://svn.apache.org/r1583176 (instead of the main reactor pom as suggested in the pom.xml).,1396205650147
+http://sealytics.github.io/ontologies/release-model#Bug-baf7a611-a08e-4aae-9553-60a0e846a8dd,fixed with  http://svn.apache.org/r1587575 in 0.12 and http://svn.apache.org/r1587576 in 1.0,1396795344457
+http://sealytics.github.io/ontologies/release-model#Bug-baf7a611-a08e-4aae-9553-60a0e846a8dd,I&apos;ve added the patch file.,1396795344457
+http://sealytics.github.io/ontologies/release-model#Bug-a6538621-50c1-49f6-b86a-39211bbdfa08,Duplicate of STANBOL-1154,1383254232446
+http://sealytics.github.io/ontologies/release-model#Bug-73e3ad79-20be-4a5c-b82f-53773eefa7f9,"fixed with http://svn.apache.org/r1587525 in 0.12 and http://svn.apache.org/r1587527 in trunk.
+
+thx Furkan for the patch",1396819111621
+http://sealytics.github.io/ontologies/release-model#Bug-73e3ad79-20be-4a5c-b82f-53773eefa7f9,I&apos;ve attached the path that escapes user supplied data.,1396819111621
+http://sealytics.github.io/ontologies/release-model#Bug-7c8c125c-0a1c-4733-88f7-33d085e2a726,moved bundles around to make the dependency only one way.,1378893718922
+http://sealytics.github.io/ontologies/release-model#Bug-46535915-0895-4e2f-9939-46b1cafa5459,"To workaround problems with multiple initializations of the felix.http.jetty bundle (encountered by [~a.kuckartz@ping.de]) this will also streamline the startlevels as follows
+
+* the OSGI framework is started at level=2 (was 5)
+* logging is also started at level=2 (was 5)
+* the http.jetty at level=3 - via jarWebSupport in the launchers pom.xml files) (was 1)
+* the http.whiteboard at level=4 (was 5)
+",1382284151573
+http://sealytics.github.io/ontologies/release-model#Bug-46535915-0895-4e2f-9939-46b1cafa5459,changed with revision http://svn.apache.org/r1534027 in 0.12 and http://svn.apache.org/r1534529 in trunk,1382284151573
+http://sealytics.github.io/ontologies/release-model#Bug-05c33706-1e0d-4841-875e-4cc45d329f48,This was fixed with http://svn.apache.org/r1492566 (13.Jun),1369423453743
+http://sealytics.github.io/ontologies/release-model#Bug-05c33706-1e0d-4841-875e-4cc45d329f48,"Reopen, because the fix does not work if Stanbol is running within an embedded OSGI environment and the Context Classloader is leaking a solr.",1369423453743
+http://sealytics.github.io/ontologies/release-model#Bug-05c33706-1e0d-4841-875e-4cc45d329f48,"The changed SolrServerAdapter now overrides the following Methods of the CoreContainer
+
+* create(CoreDescriptior): To ensure that the OsgiSolrResourceLoader is used to init the SolrCore. NOTE: that ZooKeeper maanaged cores are not yet supported. If a ZooKeeper Controller is present, the supoer implementation is called (what will likely cause Exceptions during initialisation of the Core)
+* register(Map&lt;String,SolrCore&gt;, String, SolrCore, boolesn): To ensure that registered SolrCores are registered as OSGI services. NOTE the special case where registration is posponed during the initial creation of the SolrCore because this can cause a deadlock (see comments in the source for details)
+* swap(String, String): To ensure that the OSGI serviceRegistration are updated accordingly
+
+Additional Changes:
+
+* The methods of the SolrServerAdapter corresponding to the now overridden methods of the wrapped CoreContainer where accordingly adapted
+* The SolrServerAdapter does now hold an reference count on managed SolrCores. This prevents the close of SolrCores shortly after the first registration (In previous versions users should have noticed the same SolrCore to be initialised twice because of that)
+* The SolrServerAdapter does no longer decrease the reference count until it reaches zero. This will avoid the Solr Error Messages about negative reference counts, but also requires that other OSGI components to correctly call SolrCore#close(). However an investigation of the current usage as shown that mist likely EmbeddedSolrServers will be used to use obtained CoreContainers and the  EmbeddedSolrServer does correctly call close() on each obtained SolrCore.",1369423453743
+http://sealytics.github.io/ontologies/release-model#Bug-05c33706-1e0d-4841-875e-4cc45d329f48,"Fixed several embedded OSGI environment related issues with http://svn.apache.org/r1490540 and  http://svn.apache.org/r149055
+Also fixed an issue that prevented the correct shutdown of the commons.solr.core bundle with http://svn.apache.org/r1490571",1369423453743
+http://sealytics.github.io/ontologies/release-model#Bug-05c33706-1e0d-4841-875e-4cc45d329f48,"Reopen, because there seam still to be issues with SolrCores to be registered/unregistered several times - indicating a problem with the reference count on SolrCores",1369423453743
+http://sealytics.github.io/ontologies/release-model#Bug-05c33706-1e0d-4841-875e-4cc45d329f48,implemented described changes with http://svn.apache.org/r1489722,1369423453743
+http://sealytics.github.io/ontologies/release-model#Bug-557f9866-5f3c-48b2-b007-1ad63582ebad,fixed with http://svn.apache.org/r1581735 in 0.12.1 and http://svn.apache.org/r1581736 in the trunk,1395815601242
+http://sealytics.github.io/ontologies/release-model#Bug-5a644cef-19f2-4969-becb-958bbed423a8,"After a further change the engine now encounters the following issue
+
+    java.security.AccessControlException: access denied (&quot;java.lang.RuntimePermission&quot; &quot;getClassLoader&quot;)
+        at java.security.AccessControlContext.checkPermission(AccessControlContext.java:372)
+        at java.security.AccessController.checkPermission(AccessController.java:559)
+        at java.lang.SecurityManager.checkPermission(SecurityManager.java:549)
+        at java.lang.ClassLoader.checkClassLoaderPermission(ClassLoader.java:1549)
+        at java.lang.Class.getClassLoader(Class.java:614)
+        at org.apache.lucene.util.AttributeSource$AttributeFactory$DefaultAttributeFactory.getClassForInterface(AttributeSource.java:79)
+        at org.apache.lucene.util.AttributeSource$AttributeFactory$DefaultAttributeFactory.createAttributeInstance(AttributeSource.java:65)
+        at org.apache.lucene.util.AttributeSource.addAttribute(AttributeSource.java:271)
+        at org.apache.stanbol.enhancer.engines.lucenefstlinking.LinkableTokenFilter.&lt;init&gt;(LinkableTokenFilter.java:148)
+        at org.apache.stanbol.enhancer.engines.lucenefstlinking.FstLinkingEngine.tag(FstLinkingEngine.java:358)
+        at org.apache.stanbol.enhancer.engines.lucenefstlinking.FstLinkingEngine.computeEnhancements(FstLinkingEngine.java:175)
+
+To solve this the Solr Attribute need to be added in doPrivileged to the TokenFilter.",1381901018185
+http://sealytics.github.io/ontologies/release-model#Bug-5a644cef-19f2-4969-becb-958bbed423a8,resolved with http://svn.apache.org/r1533055,1381901018185
+http://sealytics.github.io/ontologies/release-model#Bug-5a644cef-19f2-4969-becb-958bbed423a8,"After the changes in http://svn.apache.org/r1532653 the engine still fails to load the models with the trace
+
+    java.security.AccessControlException: access denied (&quot;java.io.FilePermission&quot; &quot;/home/andreas/workspace/stanbol/integration-tests/target/launchdir/stanbol/indexes/default/dbpedia-2013.10.16/data/fst/dbpedia_ont_surfaceForm.en.fst&quot; &quot;read&quot;)
+	at java.security.AccessControlContext.checkPermission(AccessControlContext.java:372)
+	at java.security.AccessController.checkPermission(AccessController.java:559)
+	at java.lang.SecurityManager.checkPermission(SecurityManager.java:549)
+	at java.lang.SecurityManager.checkRead(SecurityManager.java:888)
+	at java.io.File.lastModified(File.java:882)
+	at org.apache.stanbol.enhancer.engines.lucenefstlinking.CorpusInfo.getCorpus(CorpusInfo.java:212)
+	at org.apache.stanbol.enhancer.engines.lucenefstlinking.TaggingSession.obtainFstCorpus(TaggingSession.java:334)
+        [..]",1381901018185
+http://sealytics.github.io/ontologies/release-model#Bug-0f04e4f3-58a9-4d45-9a33-76e8d99a7af6,fixed with http://svn.apache.org/r1594122 (0.12) and http://svn.apache.org/r1594132 in trunk,1399919203887
+http://sealytics.github.io/ontologies/release-model#Bug-dd2e7580-cdfe-4b69-a24d-b3a10cb1b2f4,"fixed in 0.12.1 with http://svn.apache.org/r1582213 and in the trunk (1.0.0) with http://svn.apache.org/r1582214
+
+NOTE: in 0.12.1 the method with the typo was deprecated while in 1.0.0 it got deleted. This ensures backward compatibility for 0.12.
+
+Thanks  luyi wang for reporting
+
+best
+Rupert",1395900606737
+http://sealytics.github.io/ontologies/release-model#Bug-4ce9e644-77ef-4c58-a0f5-131b51c65e0d,changed with http://svn.apache.org/r1617725 in 0.12 and http://svn.apache.org/r1617726 in trunk,1407935103153
+http://sealytics.github.io/ontologies/release-model#Bug-a7c71869-1213-4c44-b761-abf438e9914a,fixed with http://svn.apache.org/r1572559 for 0.12.1 and http://svn.apache.org/r1572578 in trunk,1393494844480
+http://sealytics.github.io/ontologies/release-model#Bug-4a5155eb-c90a-4637-81e4-443b434e9daa,fixed with http://svn.apache.org/r1530925,1381382554198
+http://sealytics.github.io/ontologies/release-model#Bug-fc8047e8-a90c-4158-9ec2-db40e51a819c,adapted the SPARQL generation with http://svn.apache.org/r1587844 in 0.12 and http://svn.apache.org/r1587849 in trunk. Also added a unit test that checks for the expected FILTER part in the query. ,1391701016813
+http://sealytics.github.io/ontologies/release-model#Bug-a896d6cd-20eb-4c43-9ebd-c3034f3b4835,"fixed with http://svn.apache.org/r1597561 in 0.12 and http://svn.apache.org/r1597562 in trunk
+
+Also added some commonly used prefixes for namespaces already defined by the Stanbol NamespancePrefixProvider",1401092547175
+http://sealytics.github.io/ontologies/release-model#Bug-da10f9a5-27b1-4a2a-be96-f33e86925bf1,"fixed
+
+with http://svn.apache.org/r1551671 in the 0.12 branch
+with http://svn.apache.org/r1551673 in the trunk",1387309586492
+http://sealytics.github.io/ontologies/release-model#Bug-9843bd5f-63f2-480f-9275-1e5b607551fc,fixed with http://svn.apache.org/r1532743,1345741736312
+http://sealytics.github.io/ontologies/release-model#Bug-e734269b-244f-4337-84a4-15695b1cd659,Should also add LDPath template so that its sources can be removed from commons/ldtemplaterenderer/,1348333234914
+http://sealytics.github.io/ontologies/release-model#Bug-e734269b-244f-4337-84a4-15695b1cd659,"created branch at https://svn.apache.org/repos/asf/stanbol/branches/STANBOL-748
+
+The code passes the unit tests but not the integration test. Reason being a missing dependency on exactly slf4j 1.7.",1348333234914
+http://sealytics.github.io/ontologies/release-model#Bug-e734269b-244f-4337-84a4-15695b1cd659,"Reto, what is the status of that.
+
+I would suggest to directly switch to the Marmotta version of LDpath [1] after the next Stanbol release.
+
+
+
+[1] http://marmotta.incubator.apache.org/ldpath/introduction.html",1348333234914
+http://sealytics.github.io/ontologies/release-model#Bug-df8332c2-440a-4420-94cb-48011500f79a,fixed with http://svn.apache.org/r1558701 in 0.12 and http://svn.apache.org/r1558748 in trunk,1389803271169
+http://sealytics.github.io/ontologies/release-model#Bug-b2bc294b-9c35-4d42-b1e5-df1344150445,"fixed with 
+
+    http://svn.apache.org/r1544514 in the 0.12 branch
+    http://svn.apache.org/r1544515 in the trunk version",1385123288140
+http://sealytics.github.io/ontologies/release-model#Bug-ad0d4831-0c9c-4463-b8f4-21abc604743f,"marking as resolved.
+
+NOTE the &quot;temporary workaround for STANBOL-1073&quot; comment in the code. As Reto mentioned this should be revisited after upgrading to Apache Jena",1368735193277
+http://sealytics.github.io/ontologies/release-model#Bug-ad0d4831-0c9c-4463-b8f4-21abc604743f,"I couldn&apos;t reproduce the problem on clerezza trunk, so I assume is fixed in more recent Jena versions.",1368735193277
+http://sealytics.github.io/ontologies/release-model#Bug-ad0d4831-0c9c-4463-b8f4-21abc604743f,"Finding the following in the log:
+
+16.05.2013 21:43:52.153 *WARN* [122668085@qtp-1201848792-4] org.apache.felix.http.jetty Error for /entityhub/entity (java.lang.ExceptionInInitializerError) java.lang.ExceptionInInitializerError
+	at org.openjena.riot.system.JenaReaderRIOT.readImpl(JenaReaderRIOT.java:121)
+	at org.openjena.riot.system.JenaReaderRIOT.read(JenaReaderRIOT.java:79)
+	at com.hp.hpl.jena.rdf.model.impl.ModelCom.read(ModelCom.java:226)
+	at org.apache.clerezza.rdf.jena.parser.JenaParserProvider.parse(JenaParserProvider.java:68)
+	at org.apache.clerezza.rdf.core.serializedform.Parser.parse(Parser.java:191)
+	at org.apache.clerezza.rdf.core.serializedform.Parser.parse(Parser.java:144)
+	at org.apache.stanbol.entityhub.jersey.parsers.RepresentationReader.parseFromContent(RepresentationReader.java:246)
+	at org.apache.stanbol.entityhub.jersey.parsers.RepresentationReader.readFrom(RepresentationReader.java:228)
+	at org.apache.stanbol.entityhub.jersey.parsers.RepresentationReader.readFrom(RepresentationReader.java:1)
+	at com.sun.jersey.spi.container.ContainerRequest.getEntity(ContainerRequest.java:488)
+	at com.sun.jersey.server.impl.model.method.dispatch.EntityParamDispatchProvider$EntityInjectable.getValue(EntityParamDispatchProvider.java:123)
+	at com.sun.jersey.server.impl.inject.InjectableValuesProvider.getInjectableValues(InjectableValuesProvider.java:46)
+	at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$EntityParamInInvoker.getParams(AbstractResourceMethodDispatchProvider.java:153)
+	at com.sun.jersey.server.impl.model.method.dispatch.AbstractResourceMethodDispatchProvider$ResponseOutInvoker._dispatch(AbstractResourceMethodDispatchProvider.java:203)
+	at com.sun.jersey.server.impl.model.method.dispatch.ResourceJavaMethodDispatcher.dispatch(ResourceJavaMethodDispatcher.java:75)
+	at com.sun.jersey.server.impl.uri.rules.HttpMethodRule.accept(HttpMethodRule.java:302)
+	at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+	at com.sun.jersey.server.impl.uri.rules.ResourceClassRule.accept(ResourceClassRule.java:108)
+	at com.sun.jersey.server.impl.uri.rules.RightHandPathRule.accept(RightHandPathRule.java:147)
+	at com.sun.jersey.server.impl.uri.rules.RootResourceClassesRule.accept(RootResourceClassesRule.java:84)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1480)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1411)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1360)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1350)
+	at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.apache.felix.http.base.internal.handler.ServletHandler.doHandle(ServletHandler.java:96)
+	at org.apache.felix.http.base.internal.handler.ServletHandler.handle(ServletHandler.java:79)
+	at org.apache.felix.http.base.internal.dispatch.ServletPipeline.handle(ServletPipeline.java:42)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:49)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.stanbol.commons.httpqueryheaders.impl.QueryHeadersFilter.doFilter(QueryHeadersFilter.java:75)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.doHandle(FilterHandler.java:88)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:76)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:78)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.stanbol.commons.web.resources.ResourceServingFilter.doFilterHttp(ResourceServingFilter.java:148)
+	at org.apache.stanbol.commons.web.resources.ResourceServingFilter.doFilter(ResourceServingFilter.java:91)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.doHandle(FilterHandler.java:88)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:76)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.stanbol.commons.security.auth.AuthenticatingFilter$1.run(AuthenticatingFilter.java:163)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAsPrivileged(Subject.java:536)
+	at org.apache.stanbol.commons.security.auth.AuthenticatingFilter.doFilter(AuthenticatingFilter.java:159)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.doHandle(FilterHandler.java:88)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:76)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.felix.http.base.internal.dispatch.FilterPipeline.dispatch(FilterPipeline.java:48)
+	at org.apache.felix.http.base.internal.dispatch.Dispatcher.dispatch(Dispatcher.java:39)
+	at org.apache.felix.http.base.internal.DispatcherServlet.service(DispatcherServlet.java:67)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:390)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:765)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.content(HttpConnection.java:943)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:756)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:218)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+Caused by: java.security.AccessControlException: access denied (&quot;java.io.FilePermission&quot; &quot;C:\Users\Reto\projects\apache\launchers\full\target\.&quot; &quot;read&quot;)
+	at java.security.AccessControlContext.checkPermission(AccessControlContext.java:366)
+	at java.security.AccessController.checkPermission(AccessController.java:560)
+	at java.lang.SecurityManager.checkPermission(SecurityManager.java:549)
+	at java.lang.SecurityManager.checkRead(SecurityManager.java:888)
+	at java.io.File.isDirectory(File.java:797)
+	at java.io.File.toURI(File.java:700)
+	at com.hp.hpl.jena.util.FileUtils.toURL(FileUtils.java:203)
+	at org.openjena.riot.system.IRIResolver.&lt;clinit&gt;(IRIResolver.java:85)
+	... 72 more
+16.05.2013 21:43:52.156 *WARN* [122668085@qtp-1201848792-4] org.apache.felix.http.jetty Nested in java.lang.ExceptionInInitializerError: (java.security.AccessControlException: access denied (&quot;java.io.FilePermission&quot; &quot;C:\Users\Reto\projects\apache\launchers\full\target\.&quot; &quot;read&quot;)) java.security.AccessControlException: access denied (&quot;java.io.FilePermission&quot; &quot;C:\Users\Reto\projec",1368735193277
+http://sealytics.github.io/ontologies/release-model#Bug-ad0d4831-0c9c-4463-b8f4-21abc604743f,"When running the full-war file this work-around causes NPEs as the parser property used in line 178 (parser.parse(in, &quot;text/turtle&quot;);) is NULL for some reason",1368735193277
+http://sealytics.github.io/ontologies/release-model#Bug-ad0d4831-0c9c-4463-b8f4-21abc604743f,Committed work-around with 1483855 that should be removed once clerezza/jena is updated,1368735193277
+http://sealytics.github.io/ontologies/release-model#Bug-ad0d4831-0c9c-4463-b8f4-21abc604743f,"Those NPE had not any side-effects.  They where the result of initJersey() to be called before activation. In such cases this method was anyway expected to do nothing.
+
+In the meantime I changed the work-around to be applied after the check for activation. This prevents those NPE",1368735193277
+http://sealytics.github.io/ontologies/release-model#Bug-2eb49bf6-3f40-4cce-b7b6-860a08217d5c,"This issue was because on running Zemanta engine test, it could not access the server and got HTML output as &apos;Access Denied&apos; - and test failed. ",1396697214870
+http://sealytics.github.io/ontologies/release-model#Bug-58877159-d4f0-4c23-bb15-126d82fc8faf,"(2) indicated that the wrong LabelTokenizer service was bound to the @Reference defined in the EntityCoMention engine.
+
+Most likely the static reference to the LabelTokenizer is not updated as a new service with a higher ranking becomes available. If this is the case the LabelTokenizer with the highest ranking at the time of the activation of the EntityCoMention engine would be registered. If the MainLabelTokenizer would only become available at a later point in time the EntityCoMention would not use the LabelTokenizer with the highest ranking. This would explain the observed behavior. This assumption is also confirmed by that fact that stop/start on the component fixed the problem.
+
+For solving (2) the EntityCoMention engine should use a ServiceTracker instead. ServiceTracker#getService() is guaranteed to return the service with the highest service.ranking.",1400747886779
+http://sealytics.github.io/ontologies/release-model#Bug-58877159-d4f0-4c23-bb15-126d82fc8faf,fixed with http://svn.apache.org/r1597063 in 0.12 and http://svn.apache.org/r1597068 in trunk,1400747886779
+http://sealytics.github.io/ontologies/release-model#Bug-42ce2e03-df48-4967-8115-83c26d7ac393,Fixed with revision http://svn.apache.org/r1494957 and http://svn.apache.org/r1494992. Load Mappings only when response&apos;s Content-Type equal to text/plain and Status code equal 200,1371728247986
+http://sealytics.github.io/ontologies/release-model#Bug-42ce2e03-df48-4967-8115-83c26d7ac393,"Attached a patch that:
+
+* changes the provider to create a Url Connection on each request
+* sets also a connection/read timeout of 5sec
+* closes the InputStream
+* disconnects http (as this provider will send the next request only after a long period)
+
+Also added a similar check to the unit test - to prevent errors in the test if the service is down.
+
+NOTE: I was not able to test if the error handling correctly detects and handles outages of the service as encountered last week, as the service is in the meantime up and running.
+",1371728247986
+http://sealytics.github.io/ontologies/release-model#Bug-42ce2e03-df48-4967-8115-83c26d7ac393,fixed with http://svn.apache.org/r1495987,1371728247986
+http://sealytics.github.io/ontologies/release-model#Bug-42ce2e03-df48-4967-8115-83c26d7ac393,The fix had some problems as it use an UrlConnection as static member. This should still be the URL. A new UrlConnection should be created on each request to the service (will provide patch),1371728247986
+http://sealytics.github.io/ontologies/release-model#Bug-20f74c5a-5754-4d75-8d33-7af508ca49dc,fixed with http://svn.apache.org/r1558711 in 0.12 and http://svn.apache.org/r1558748 in trunk,1389853669572
+http://sealytics.github.io/ontologies/release-model#Bug-3a975e7f-2e3a-4b7c-85ce-fa368979b71f,"Actually it causes that launchers using stanbol-patent 5 won&apos;t build if you do not build stanbol locally:
+
+[ERROR] Failed to execute goal on project stanbol: Could not resolve dependencies for project eu.fusepool.p3:stanbol:war:1.0.0-SNAPSHOT: Failed to collect dependencies at org.apache.stanbol:org.apache.stanbol.launchers.bundlelists.osgiframework:xml:1.0.0-SNAPSHOT: Failed to read artifact descriptor for org.apache.stanbol:org.apache.stanbol.launchers.bundlelists.osgiframework:xml:1.0.0-SNAPSHOT: Failure to find org.apache.stanbol:stanbol-parent:pom:5-SNAPSHOT in https://oss.sonatype.org/content/repositories/snapshots/ was cached in the local repository, resolution will not be reattempted until the update interval of sonatype-snapshots has elapsed or updates are forced -&gt; [Help 1]
+
+That means the issue has a completely different priority.",1403529469815
+http://sealytics.github.io/ontologies/release-model#Bug-3a975e7f-2e3a-4b7c-85ce-fa368979b71f,updating of trunk done as part of STANBOL-1351,1403529469815
+http://sealytics.github.io/ontologies/release-model#Bug-03855570-9aa0-4fc4-8d9a-49988acbeb72,"Hi Rupert,
+I checked server start-up with : org.apache.stanbol.launchers.stable-0.10.0-SNAPSHOT.jar and it loaded the web-pages successfully..
+I cannot reproduce the above error on stable launcher..
+
+Thanks,
+Dileepa",1365582722447
+http://sealytics.github.io/ontologies/release-model#Bug-03855570-9aa0-4fc4-8d9a-49988acbeb72,"Hi Maxim, 
+
+with revision http://svn.apache.org/r1466786 I added a BundelActivator to the Freemarker bundle that sets SLF4J as logging framework. Would be nice if you could check if this solves this issue for your.
+
+If you use the Git mirror please make sure that the revision is already available via GIT before testing.",1365582722447
+http://sealytics.github.io/ontologies/release-model#Bug-03855570-9aa0-4fc4-8d9a-49988acbeb72,"Dileepa, can you still reproduce this? Are you sure the that the attached log was generated with a version later as http://svn.apache.org/r1466786?
+
+If this is the case, can you please run Stanbol with 
+
+    java -verbose:class ...
+
+This should give more information on why the JVM was not able to load the class in question",1365582722447
+http://sealytics.github.io/ontologies/release-model#Bug-03855570-9aa0-4fc4-8d9a-49988acbeb72,"Faced a similar Http 500 error on homepage.
+Please find the full error log attached (error_270513.log)
+",1365582722447
+http://sealytics.github.io/ontologies/release-model#Bug-03855570-9aa0-4fc4-8d9a-49988acbeb72,"Hi Rupert,
+
+Attached log is file from stanbol/logs/error.log, whole stack trace i see in browser:
+HTTP ERROR 500
+
+Problem accessing /. Reason:
+
+    INTERNAL_SERVER_ERROR
+Caused by:
+
+java.lang.ExceptionInInitializerError
+	at freemarker.ext.beans.BeansWrapper.&lt;clinit&gt;(BeansWrapper.java:147)
+	at freemarker.template.ObjectWrapper.&lt;clinit&gt;(ObjectWrapper.java:69)
+	at freemarker.core.Configurable.&lt;init&gt;(Configurable.java:139)
+	at freemarker.template.Configuration.&lt;init&gt;(Configuration.java:142)
+	at freemarker.template.Configuration.&lt;clinit&gt;(Configuration.java:127)
+	at org.apache.stanbol.commons.viewable.writer.impl.ViewableWriter.renderPojo(ViewableWriter.java:82)
+	at org.apache.stanbol.commons.viewable.writer.impl.ViewableWriter.writeTo(ViewableWriter.java:74)
+	at org.apache.stanbol.commons.viewable.writer.impl.ViewableWriter.writeTo(ViewableWriter.java:43)
+	at com.sun.jersey.spi.container.ContainerResponse.write(ContainerResponse.java:306)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl._handleRequest(WebApplicationImpl.java:1448)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1360)
+	at com.sun.jersey.server.impl.application.WebApplicationImpl.handleRequest(WebApplicationImpl.java:1350)
+	at com.sun.jersey.spi.container.servlet.WebComponent.service(WebComponent.java:416)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:538)
+	at com.sun.jersey.spi.container.servlet.ServletContainer.service(ServletContainer.java:716)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.apache.felix.http.base.internal.handler.ServletHandler.doHandle(ServletHandler.java:96)
+	at org.apache.felix.http.base.internal.handler.ServletHandler.handle(ServletHandler.java:79)
+	at org.apache.felix.http.base.internal.dispatch.ServletPipeline.handle(ServletPipeline.java:42)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:49)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.stanbol.commons.httpqueryheaders.impl.QueryHeadersFilter.doFilter(QueryHeadersFilter.java:75)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.doHandle(FilterHandler.java:88)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:76)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:78)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.stanbol.commons.web.resources.ResourceServingFilter.doFilterHttp(ResourceServingFilter.java:148)
+	at org.apache.stanbol.commons.web.resources.ResourceServingFilter.doFilter(ResourceServingFilter.java:91)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.doHandle(FilterHandler.java:88)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:76)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.stanbol.commons.security.auth.AuthenticatingFilter$1.run(AuthenticatingFilter.java:163)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAsPrivileged(Subject.java:536)
+	at org.apache.stanbol.commons.security.auth.AuthenticatingFilter.doFilter(AuthenticatingFilter.java:159)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.doHandle(FilterHandler.java:88)
+	at org.apache.felix.http.base.internal.handler.FilterHandler.handle(FilterHandler.java:76)
+	at org.apache.felix.http.base.internal.dispatch.InvocationFilterChain.doFilter(InvocationFilterChain.java:47)
+	at org.apache.felix.http.base.internal.dispatch.HttpFilterChain.doFilter(HttpFilterChain.java:33)
+	at org.apache.felix.http.base.internal.dispatch.FilterPipeline.dispatch(FilterPipeline.java:48)
+	at org.apache.felix.http.base.internal.dispatch.Dispatcher.dispatch(Dispatcher.java:39)
+	at org.apache.felix.http.base.internal.DispatcherServlet.service(DispatcherServlet.java:67)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:820)
+	at org.mortbay.jetty.servlet.ServletHolder.handle(ServletHolder.java:511)
+	at org.mortbay.jetty.servlet.ServletHandler.handle(ServletHandler.java:390)
+	at org.mortbay.jetty.servlet.SessionHandler.handle(SessionHandler.java:182)
+	at org.mortbay.jetty.handler.ContextHandler.handle(ContextHandler.java:765)
+	at org.mortbay.jetty.handler.HandlerWrapper.handle(HandlerWrapper.java:152)
+	at org.mortbay.jetty.Server.handle(Server.java:326)
+	at org.mortbay.jetty.HttpConnection.handleRequest(HttpConnection.java:542)
+	at org.mortbay.jetty.HttpConnection$RequestHandler.headerComplete(HttpConnection.java:926)
+	at org.mortbay.jetty.HttpParser.parseNext(HttpParser.java:549)
+	at org.mortbay.jetty.HttpParser.parseAvailable(HttpParser.java:212)
+	at org.mortbay.jetty.HttpConnection.handle(HttpConnection.java:404)
+	at org.mortbay.io.nio.SelectChannelEndPoint.run(SelectChannelEndPoint.java:410)
+	at org.mortbay.thread.QueuedThreadPool$PoolThread.run(QueuedThreadPool.java:582)
+Caused by: java.util.NoSuchElementException
+	at org.openjena.riot.tokens.TokenizerText.next(TokenizerText.java:91)
+	at com.hp.hpl.jena.tdb.nodetable.NodecSSE.decode(NodecSSE.java:100)
+	at com.hp.hpl.jena.tdb.lib.NodeLib.decode(NodeLib.java:85)
+	at com.hp.hpl.jena.tdb.lib.NodeLib.fetchDecode(NodeLib.java:67)
+	at com.hp.hpl.jena.tdb.nodetable.NodeTableNative.readNodeByNodeId(NodeTableNative.java:158)
+	at com.hp.hpl.jena.tdb.nodetable.NodeTableNative._retrieveNodeByNodeId(NodeTableNative.java:85)
+	at com.hp.hpl.jena.tdb.nodetable.NodeTableNative.getNodeForNodeId(NodeTableNative.java:58)
+	at com.hp.hpl.jena.tdb.nodetable.NodeTableCache._retrieveNodeByNodeId(NodeTableCache.java:86)
+	at com.hp.hpl.jena.tdb.nodetable.NodeTableCache.getNodeForNodeId(NodeTableCache.java:57)
+	at com.hp.hpl.jena.tdb.nodetable.NodeTableWrapper.getNodeForNodeId(NodeTableWrapper.java:43)
+	at com.hp.hpl.jena.tdb.nodetable.NodeTableInline.getNodeForNodeId(NodeTableInline.java:55)
+	at com.hp.hpl.jena.tdb.lib.TupleLib.triple(TupleLib.java:108)
+	at com.hp.hpl.jena.tdb.lib.TupleLib.triple(TupleLib.java:103)
+	at com.hp.hpl.jena.tdb.lib.TupleLib.access$000(TupleLib.java:32)
+	at com.hp.hpl.jena.tdb.lib.TupleLib$3.convert(TupleLib.java:64)
+	at com.hp.hpl.jena.tdb.lib.TupleLib$3.convert(TupleLib.java:60)
+	at org.openjena.atlas.iterator.Iter$4.next(Iter.java:265)
+	at com.hp.hpl.jena.tdb.store.GraphTDBBase$MapperIteratorTriples.next(GraphTDBBase.java:227)
+	at com.hp.hpl.jena.tdb.store.GraphTDBBase$MapperIteratorTriples.next(GraphTDBBase.java:186)
+	at org.apache.clerezza.rdf.jena.storage.JenaGraphAdaptor$1.next(JenaGraphAdaptor.java:115)
+	at org.apache.clerezza.rdf.jena.storage.JenaGraphAdaptor$1.next(JenaGraphAdaptor.java:96)
+	at org.apache.clerezza.rdf.core.impl.AbstractTripleCollection$1.next(AbstractTripleCollection.java:83)
+	at org.apache.clerezza.rdf.core.impl.AbstractTripleCollection$1.next(AbstractTripleCollection.java:72)
+	at org.apache.clerezza.rdf.core.access.LockingIterator.next(LockingIterator.java:57)
+	at org.apache.clerezza.rdf.core.access.LockingIterator.next(LockingIterator.java:31)
+	at org.apache.clerezza.rdf.core.access.SecuredTripleCollection$1.next(SecuredTripleCollection.java:66)
+	at org.apache.clerezza.rdf.core.access.SecuredTripleCollection$1.next(SecuredTripleCollection.java:55)
+	at org.apache.clerezza.platform.security.UserAwarePolicy.getUserByName(UserAwarePolicy.java:202)
+	at org.apache.clerezza.platform.security.UserAwarePolicy.getAllPermissionsOfAUserByName(UserAwarePolicy.java:178)
+	at org.ap",1365582722447
+http://sealytics.github.io/ontologies/release-model#Bug-03855570-9aa0-4fc4-8d9a-49988acbeb72,"Hi Maxim,
+
+Are those the whole stack traces you are seeing? As the attached logs does not include those exceptions it would be important to know the whole trace.
+
+In addition are you sure that the part of the log in the end that includes those warnings
+
+    WARNING: The following warnings have been detected with resource and/or provider classes: 
+      WARNING: A HTTP GET method, public void org.apache.clerezza.platform.security.permissioncheck.PermissionCheck.checkPermission(java.lang.String), MUST return a non-void 
+
+is from starting the stable launcher (as stated in the beginning). Because those messages are not expected when starting the stable launcher - as this launcher does not include the modules generating those.",1365582722447
+http://sealytics.github.io/ontologies/release-model#Bug-03855570-9aa0-4fc4-8d9a-49988acbeb72,"I think this is releated to the freemaker.Logger and how it loads the Logging framework to be used.
+
+The best option would be to write a BundleActivator and explicitly set SLF4J, but this is not possible with the currently used sling.commons.log version as it does not export org.slf4j.spi. Because of that I created STANBOL-1025 to upgrade to version 3.0 of that module.",1365582722447
+http://sealytics.github.io/ontologies/release-model#Bug-7d29719b-4d15-4f70-8b3b-0863623b1790,fixed with rev. 1594863,1400151999114
+http://sealytics.github.io/ontologies/release-model#Bug-f97e0911-73ef-4667-9fcc-19c1f8d26b06,"The issue was cause by three things:
+
+1. the set language configuration was not correctly reset in the (re)-initialization of the RESTful NLP Analysis service
+2. the request for the supported languages of the RESTful NLP Analysis service was not setting the &quot;application/json&quot; Accept header. So the response was some HTML page. Because of that the parsing of the supported lanugages (a simple regex over the string) was generating unexpected results.
+
+The fix 
+
+1. the lanugage configuration is not set in the #activate and reset in the #deactivate method. There is no need to repeat this when re-initialising the remote NLP service
+2. the supported languages request now sets the &quot;Accept: application/json&quot; header.
+
+fixed with http://svn.apache.org/r1617239 in 0.12 and http://svn.apache.org/r1617241 in trunk",1407750787610
+http://sealytics.github.io/ontologies/release-model#Bug-e8469e63-8d05-491b-88a6-d658de1ced8e,Homepage only issue ... therefore closing,1381871437985
+http://sealytics.github.io/ontologies/release-model#Bug-e8469e63-8d05-491b-88a6-d658de1ced8e,"Applied patch with http://svn.apache.org/r1532706
+Already published to the webpage.
+
+Thanks Bruno P. Kinoshita for the path!",1381871437985
+http://sealytics.github.io/ontologies/release-model#Bug-d6080195-a974-4628-9705-011900fef2b2,"implemented a simple alg. that normalizes based on the suggestion with the max. score
+{code}
+    score = Math.log1p(score) / Math.log1p(maxScore)
+{code}
+
+applied fix with http://svn.apache.org/r1597760 in 0.12 and  http://svn.apache.org/r1597762 in trunk ",1395907874002
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,"This seems to have broken ldpath template:
+
+ [java] org.osgi.framework.BundleException: Unresolved constraint in bundle org.apache.stanbol.commons.security.usermanagement [113]: Unable to resolve 113.0: missing requirement [113.0] osgi.wiring.package; (&amp;(osgi.wiring.package=org.apache.stanbol.commons.ldpathtemplate)(version&gt;=1.0.0)(!(version&gt;=2.0.0))) [caused by: Unable to resolve 105.0: missing requirement [105.0] osgi.wiring.package; (osgi.wiring.package=at.newmedialab.ldpath)]
+     [java] 	at org.apache.felix.framework.Felix.resolveBundleRevision(Felix.java:3962)
+     [java] 	at org.apache.felix.framework.Felix.startBundle(Felix.java:2025)
+     [java] 	at org.apache.felix.framework.Felix.setActiveStartLevel(Felix.java:1279)
+     [java] 	at org.apache.felix.framework.FrameworkStartLevelImpl.run(FrameworkStartLevelImpl.java:304)
+     [java] 	at java.lang.Thread.run(Thread.java:724)",1392882428667
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,with http://svn.apache.org/r1589358 both 0.12 and 1.0 use the latest LDPath release (3.2.0),1392882428667
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,The user manager bundle is also no longer active.,1392882428667
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,re-resolved after being no longer able to reproduce reason for reopening,1392882428667
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,"Looks like you do use outdated SNAPSHOT dependencies as `org.apache.stanbol.commons.ldpathtemplate`was updated to use the Marmotta LDPath instead of the at.newmedialab.ldpath version. Have you done a full local build of the current trunk version?
+
+Note also that `org.apache.stanbol.commons.ldpathtemplate` does no longer embed the ldpath template source as 
+
+&lt;bundle&gt;
+     &lt;groupId&gt;org.apache.marmotta&lt;/groupId&gt;
+     &lt;artifactId&gt;ldpath-template&lt;/artifactId&gt;
+     &lt;version&gt;3.2.0&lt;/version&gt;
+&lt;/bundle&gt;
+
+is now an OSGI Bundle (see MARMOTTA-442)
+",1392882428667
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,This issue is already implemented. I am just waiting for the marmotta 3.2.0 release before marking this as resolved.,1392882428667
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,"Oh, I probably did an incomplete checkout or build, sorry!",1392882428667
+http://sealytics.github.io/ontologies/release-model#Bug-fd618393-1c24-40c4-a1e6-c74195a9d822,As the current Marmotta LDPath version does not provide functional OSGI bundling this depends on MARMOTTA-442,1392882428667

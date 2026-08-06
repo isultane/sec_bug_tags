@@ -1,0 +1,210 @@
+Arguments:
+        Number of words      W = 4657
+        Number of docs       D = 1996
+        Number of topics     T = 6
+        Number of iterations N = 100
+        Hyperparameter   ALPHA = 1.0000
+        Hyperparameter    BETA = 0.0100
+        Seed number            = 3
+        Number of tokens       = 510069
+Determining random order update sequence
+        Iter:20x:50x100x 0 /100, perp... (train) 263.915738 Entropy (k|d): 1.759256 (w|k): 4.736041
+        Iter:20x:50x100x 100 /100, perp... (train) 173.394993 Entropy (k|d): 1.020614 (w|k): 3.985269
+Saving to models/
+Saving to models/ done
+Topic:0
+service -->     1.563721e-01
+server  -->     9.179116e-02
+info    -->     8.165002e-02
+hive    -->     8.125531e-02
+apache  -->     3.103226e-02
+data    -->     2.867763e-02
+source  -->     2.814682e-02
+trunk   -->     2.707158e-02
+maven   -->     2.524777e-02
+function        -->     2.221597e-02
+plugin  -->     2.078350e-02
+cause   -->     2.014938e-02
+target  -->     1.704059e-02
+resources       -->     1.592452e-02
+shims   -->     1.449541e-02
+jar     -->     1.415514e-02
+gen     -->     1.367877e-02
+input   -->     1.280769e-02
+snapshot        -->     1.238577e-02
+test    -->     1.111998e-02
+warning -->     1.028974e-02
+tasks   -->     1.015363e-02
+using   -->     9.105616e-03
+thrift  -->     8.547582e-03
+main    -->     7.812610e-03
+created -->     7.771779e-03
+files   -->     6.519605e-03
+executed        -->     6.192951e-03
+install -->     5.947961e-03
+disabled        -->     5.907129e-03
+
+
+Topic:1
+https   -->     1.413504e-01
+http    -->     1.304902e-01
+hive    -->     8.476759e-02
+apache  -->     6.547410e-02
+tests   -->     3.884821e-02
+color   -->     3.611549e-02
+execution       -->     2.665012e-02
+executing       -->     2.621966e-02
+attachment      -->     2.616645e-02
+failed  -->     2.581337e-02
+test    -->     2.308549e-02
+build   -->     2.268405e-02
+job     -->     1.898399e-02
+console -->     1.864542e-02
+patch   -->     1.794411e-02
+results -->     1.785705e-02
+red     -->     1.296717e-02
+compute -->     1.150649e-02
+index   -->     1.119659e-02
+issues  -->     1.025380e-02
+testing -->     1.013288e-02
+trunk   -->     9.924902e-03
+secure  -->     9.857189e-03
+generated       -->     9.581499e-03
+output  -->     9.504112e-03
+overall -->     9.489602e-03
+message -->     9.397705e-03
+messages        -->     9.334828e-03
+automatically   -->     9.097831e-03
+logs    -->     7.535586e-03
+
+
+Topic:2
+code    -->     1.715773e-01
+string  -->     7.078871e-02
+execute -->     2.148272e-02
+can     -->     1.464695e-02
+memory  -->     1.343856e-02
+stack   -->     1.211364e-02
+patch   -->     1.180823e-02
+hive    -->     1.032200e-02
+table   -->     8.761447e-03
+issue   -->     6.732732e-03
+thanks  -->     5.989613e-03
+null    -->     5.736953e-03
+type    -->     5.558604e-03
+exec    -->     5.543742e-03
+run     -->     4.926953e-03
+operator        -->     4.733742e-03
+set     -->     4.681724e-03
+fix     -->     4.666861e-03
+method  -->     4.666861e-03
+error   -->     4.659430e-03
+value   -->     4.540531e-03
+add     -->     4.273008e-03
+allows  -->     4.258749e-03
+change  -->     4.228421e-03
+could   -->     4.220990e-03
+key     -->     4.087229e-03
+time    -->     3.998054e-03
+job     -->     3.834568e-03
+stage   -->     3.834568e-03
+map     -->     3.641357e-03
+
+
+Topic:3
+file    -->     1.195855e-01
+hive    -->     6.005055e-02
+local   -->     5.503943e-02
+user    -->     4.596152e-02
+apache  -->     4.435382e-02
+target  -->     3.554896e-02
+data    -->     3.473815e-02
+build   -->     2.927787e-02
+test    -->     2.570525e-02
+source  -->     2.270273e-02
+reverted        -->     2.232267e-02
+ivy     -->     1.933281e-02
+patch   -->     1.843332e-02
+users   -->     1.808447e-02
+trunk   -->     1.709043e-02
+echo    -->     1.502540e-02
+makes   -->     1.486789e-02
+scratch -->     1.430327e-02
+directory       -->     1.372421e-02
+clean   -->     1.339112e-02
+ant     -->     1.308706e-02
+project -->     1.294771e-02
+bin     -->     1.214957e-02
+information     -->     1.172278e-02
+results -->     9.641133e-03
+sh      -->     9.223060e-03
+apply   -->     9.083703e-03
+shims   -->     8.804988e-03
+access  -->     8.506202e-03
+common  -->     8.272895e-03
+
+
+Topic:4
+name    -->     1.931343e-01
+hive    -->     1.414079e-01
+trunk   -->     9.104566e-02
+apache  -->     7.356288e-02
+test    -->     4.640968e-02
+subject -->     3.223888e-02
+field   -->     2.955231e-02
+results -->     2.374963e-02
+amp     -->     2.226318e-02
+verify  -->     2.208963e-02
+rev     -->     2.094563e-02
+builds  -->     1.622444e-02
+view    -->     1.320085e-02
+application     -->     1.164187e-02
+via     -->     1.040529e-02
+integrated      -->     1.010969e-02
+root    -->     1.002523e-02
+plan    -->     9.636726e-03
+xml     -->     9.543823e-03
+job     -->     9.113088e-03
+exec    -->     8.606340e-03
+failure -->     7.787099e-03
+revision        -->     7.660412e-03
+queries -->     7.331027e-03
+reviews -->     6.292195e-03
+net     -->     6.224629e-03
+compiler        -->     5.861460e-03
+io      -->     4.873303e-03
+files   -->     4.788845e-03
+branch  -->     4.645267e-03
+
+
+Topic:5
+hive    -->     1.988102e-01
+apache  -->     1.745726e-01
+query   -->     8.183685e-02
+select  -->     8.091848e-02
+update  -->     5.275522e-02
+database        -->     3.591849e-02
+join    -->     2.152804e-02
+auto    -->     1.911672e-02
+write   -->     1.887767e-02
+parameter       -->     1.500012e-02
+oracle  -->     1.377563e-02
+union   -->     1.331213e-02
+test    -->     1.213133e-02
+results -->     1.208161e-02
+remove  -->     1.136070e-02
+table   -->     1.109968e-02
+stats   -->     1.090081e-02
+bucket  -->     9.968594e-03
+list    -->     8.688354e-03
+parse   -->     7.830718e-03
+alter   -->     5.817137e-03
+map     -->     5.742560e-03
+sort    -->     5.319956e-03
+failed  -->     5.170802e-03
+insert  -->     4.984359e-03
+tests   -->     3.977569e-03
+create  -->     3.977569e-03
+exec    -->     3.803555e-03
+merge   -->     3.704119e-03
+authorization   -->     3.430670e-03
