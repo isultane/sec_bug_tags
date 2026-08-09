@@ -3,8 +3,15 @@
 parse_nvd.py  --  Turn raw NVD feeds into a flat CSV for the baseline experiment.
 
 Input : a file OR directory of NVD feeds. Supports the legacy NVD XML schema
-        (vuln:/ nvd namespaces) and the NVD JSON feeds (1.1). Namespaces are
-        matched by *local name*, so minor schema differences are tolerated.
+        (vuln:/ nvd namespaces) and the NVD JSON feeds, both 1.1 and 2.0,
+        plain or .json.zip. Namespaces are matched by *local name*, so minor
+        schema differences are tolerated.
+
+NOTE: for the baseline comparison you want build_cve_summaries.py instead --
+it emits CVEsSummaries.csv, which carries the extra columns (ground-truth CWE
+provenance, dates, vulnStatus) that run_baselines.py and Experiment 1's own
+CVEsExtractor.java both consume. This script remains for the simpler
+cve_id/cwe/text extraction.
 Output: CSV with columns  cve_id, cwe, text
         (only entries that carry a CWE are written by default -- that is the
          labelled set your F-measure is computed against.)
@@ -14,7 +21,8 @@ Usage:
     python parse_nvd.py --input nvdcve-2.0-2015.xml --out data/cve.csv
     python parse_nvd.py --input nvd_json_dir --out data/cve.csv --keep-unlabelled
 """
-import argparse, csv, json, os, sys, glob, xml.etree.ElementTree as ET
+import argparse, csv, json, os, sys, glob, zipfile
+import xml.etree.ElementTree as ET
 
 
 def _local(tag):
@@ -47,11 +55,56 @@ def parse_xml(path):
             yield cve_id, cwe, summary
 
 
-def parse_json(path):
-    """Yield (cve_id, cwe, description) from an NVD JSON 1.1 feed."""
+def _load_json(path):
+    """Read a .json or .json.zip feed."""
+    if path.endswith('.zip'):
+        with zipfile.ZipFile(path) as z:
+            member = next(n for n in z.namelist() if n.endswith('.json'))
+            return json.loads(z.read(member))
     with open(path, encoding='utf-8') as fh:
-        data = json.load(fh)
-    for item in data.get('CVE_Items', []):
+        return json.load(fh)
+
+
+def parse_json(path):
+    """Yield (cve_id, cwe, description) from an NVD JSON feed.
+
+    Handles both schemas:
+      * 1.1  -- top-level "CVE_Items", cve.CVE_data_meta.ID, problemtype
+      * 2.0  -- top-level "vulnerabilities", cve.id, weaknesses
+    NVD's placeholder weaknesses (NVD-CWE-noinfo / NVD-CWE-Other) are treated
+    as "no CWE", i.e. the same NA bucket Experiment 1 uses.
+    """
+    data = _load_json(path)
+
+    if 'vulnerabilities' in data:                     # ---- NVD 2.0 ----
+        for item in data['vulnerabilities']:
+            cve = item.get('cve', {})
+            cve_id = cve.get('id')
+            cwe = None
+            # Primary weaknesses first, then Secondary
+            for want in ('Primary', 'Secondary'):
+                for w in cve.get('weaknesses', []) or []:
+                    if w.get('type') != want:
+                        continue
+                    for d in w.get('description', []):
+                        v = d.get('value', '')
+                        if d.get('lang') == 'en' and v.startswith('CWE-'):
+                            cwe = v
+                            break
+                    if cwe:
+                        break
+                if cwe:
+                    break
+            desc = None
+            for d in cve.get('descriptions', []):
+                if d.get('lang') == 'en':
+                    desc = d.get('value')
+                    break
+            if cve_id and desc:
+                yield cve_id, cwe, desc
+        return
+
+    for item in data.get('CVE_Items', []):            # ---- NVD 1.1 ----
         cve = item.get('cve', {})
         cve_id = cve.get('CVE_data_meta', {}).get('ID')
         # first CWE found
@@ -74,9 +127,10 @@ def iter_files(inp):
     if os.path.isfile(inp):
         return [inp]
     files = sorted(glob.glob(os.path.join(inp, '*.xml')) +
-                   glob.glob(os.path.join(inp, '*.json')))
+                   glob.glob(os.path.join(inp, '*.json')) +
+                   glob.glob(os.path.join(inp, '*.json.zip')))
     if not files:
-        sys.exit(f"No .xml/.json files found under {inp}")
+        sys.exit(f"No .xml/.json/.json.zip files found under {inp}")
     return files
 
 

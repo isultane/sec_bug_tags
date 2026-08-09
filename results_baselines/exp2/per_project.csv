@@ -1,0 +1,91 @@
+project,method,n_docs,n_clusters,NPMI,ARI_vs_SLDA,NMI_vs_SLDA
+activemq,Seeded-LDA (this work),512,6,0.2351,1.0,1.0
+activemq,LDA (unseeded),512,6,0.2668,0.0079,0.0143
+activemq,NMF,512,6,0.1995,-0.0092,0.0091
+activemq,TF-IDF + k-means,512,6,0.2526,0.0047,0.0199
+activemq,LSA + k-means,512,6,0.2172,-0.0027,0.0127
+activemq,SBERT + k-means,512,6,0.1981,0.0003,0.0145
+ambari,Seeded-LDA (this work),2223,6,0.3409,1.0,1.0
+ambari,LDA (unseeded),2223,6,0.3018,-0.0011,0.0046
+ambari,NMF,2223,6,0.1065,0.002,0.0026
+ambari,TF-IDF + k-means,2223,6,0.0012,0.0069,0.0041
+ambari,LSA + k-means,2223,6,-0.0287,0.006,0.0038
+ambari,SBERT + k-means,2223,6,0.1293,0.0033,0.0042
+camel,Seeded-LDA (this work),387,6,0.1109,1.0,1.0
+camel,LDA (unseeded),387,6,0.233,-0.0041,0.022
+camel,NMF,387,6,0.1768,-0.0025,0.0166
+camel,TF-IDF + k-means,387,6,0.1362,0.0208,0.0265
+camel,LSA + k-means,387,6,0.1355,0.0141,0.0265
+camel,SBERT + k-means,387,6,0.1206,-0.0001,0.0173
+cxf,Seeded-LDA (this work),417,6,0.1579,1.0,1.0
+cxf,LDA (unseeded),417,6,0.2201,0.0179,0.0213
+cxf,NMF,417,6,0.223,0.0038,0.0147
+cxf,TF-IDF + k-means,417,6,0.1597,0.0119,0.0197
+cxf,LSA + k-means,417,6,0.2028,0.0159,0.0178
+cxf,SBERT + k-means,417,6,0.1951,-0.01,0.0071
+felix,Seeded-LDA (this work),422,6,0.1868,1.0,1.0
+felix,LDA (unseeded),422,6,0.1992,0.0,0.0211
+felix,NMF,422,6,0.1551,0.0038,0.0271
+felix,TF-IDF + k-means,422,6,0.085,-0.0114,0.0164
+felix,LSA + k-means,422,6,0.1167,-0.0052,0.0204
+felix,SBERT + k-means,422,6,0.0818,0.0025,0.019
+hadoop-common,Seeded-LDA (this work),909,6,0.2773,1.0,1.0
+hadoop-common,LDA (unseeded),909,6,0.3647,0.0032,0.0123
+hadoop-common,NMF,909,6,0.3212,-0.0041,0.0059
+hadoop-common,TF-IDF + k-means,909,6,0.3748,-0.0018,0.0089
+hadoop-common,LSA + k-means,909,6,0.2731,-0.0023,0.0095
+hadoop-common,SBERT + k-means,909,6,0.3856,-0.0039,0.0047
+hbase,Seeded-LDA (this work),2172,6,0.3311,1.0,1.0
+hbase,LDA (unseeded),2172,6,0.3685,-0.0034,0.0052
+hbase,NMF,2172,6,0.3829,-0.0071,0.007
+hbase,TF-IDF + k-means,2172,6,0.4621,0.0014,0.0037
+hbase,LSA + k-means,2172,6,0.4615,0.001,0.004
+hbase,SBERT + k-means,2172,6,0.4162,0.0001,0.0041
+hive,Seeded-LDA (this work),1996,6,0.2621,1.0,1.0
+hive,LDA (unseeded),1996,6,0.337,-0.0011,0.0058
+hive,NMF,1996,6,0.3644,0.0004,0.0052
+hive,TF-IDF + k-means,1996,6,0.3311,0.0017,0.0049
+hive,LSA + k-means,1996,6,0.3202,0.0006,0.0049
+hive,SBERT + k-means,1996,6,0.3129,-0.0033,0.0039
+jackrabbit-oak,Seeded-LDA (this work),619,6,0.1766,1.0,1.0
+jackrabbit-oak,LDA (unseeded),619,6,0.1648,0.0284,0.0116
+jackrabbit-oak,NMF,619,6,0.0805,-0.0258,0.0137
+jackrabbit-oak,TF-IDF + k-means,619,6,0.1215,-0.0219,0.0218
+jackrabbit-oak,LSA + k-means,619,6,0.1584,-0.0004,0.0225
+jackrabbit-oak,SBERT + k-means,619,6,0.1263,-0.0039,0.0182
+karaf,Seeded-LDA (this work),389,6,0.1775,1.0,1.0
+karaf,LDA (unseeded),389,6,0.1545,0.0029,0.0257
+karaf,NMF,389,6,0.2038,0.004,0.0237
+karaf,TF-IDF + k-means,389,6,0.1934,-0.0123,0.0212
+karaf,LSA + k-means,389,6,0.2037,0.0052,0.025
+karaf,SBERT + k-means,389,6,0.2113,0.006,0.022
+pdfbox,Seeded-LDA (this work),751,6,0.1686,1.0,1.0
+pdfbox,LDA (unseeded),751,6,0.1968,-0.0027,0.0085
+pdfbox,NMF,751,6,0.1967,0.0028,0.0081
+pdfbox,TF-IDF + k-means,751,6,0.215,0.0037,0.0091
+pdfbox,LSA + k-means,751,6,0.1988,0.0015,0.0119
+pdfbox,SBERT + k-means,751,6,0.1952,-0.005,0.0122
+sling,Seeded-LDA (this work),464,6,0.0888,1.0,1.0
+sling,LDA (unseeded),464,6,0.2056,0.005,0.0183
+sling,NMF,464,6,0.1528,-0.0165,0.0167
+sling,TF-IDF + k-means,464,6,0.0372,-0.0076,0.0163
+sling,LSA + k-means,464,6,0.1255,-0.0073,0.0164
+sling,SBERT + k-means,464,6,0.0968,-0.0083,0.0127
+spark,Seeded-LDA (this work),1083,7,0.1758,1.0,1.0
+spark,LDA (unseeded),1083,6,0.227,-0.0115,0.008
+spark,NMF,1083,6,0.1735,0.0055,0.0076
+spark,TF-IDF + k-means,1083,6,0.2168,0.0063,0.0058
+spark,LSA + k-means,1083,6,0.2087,-0.001,0.0072
+spark,SBERT + k-means,1083,6,0.2045,-0.0023,0.0067
+stanbol,Seeded-LDA (this work),79,6,0.2382,1.0,1.0
+stanbol,LDA (unseeded),79,6,0.0814,0.0384,0.1442
+stanbol,NMF,79,6,-0.0545,0.0269,0.0959
+stanbol,TF-IDF + k-means,79,6,-0.0417,0.0032,0.0999
+stanbol,LSA + k-means,79,6,-0.037,0.0014,0.1093
+stanbol,SBERT + k-means,79,6,0.0289,-0.0271,0.0886
+tika,Seeded-LDA (this work),170,7,0.1792,1.0,1.0
+tika,LDA (unseeded),170,6,0.2198,-0.0162,0.0628
+tika,NMF,170,6,0.1873,0.0054,0.068
+tika,TF-IDF + k-means,170,6,0.197,-0.0081,0.068
+tika,LSA + k-means,170,6,0.1736,-0.0177,0.0814
+tika,SBERT + k-means,170,6,0.149,-0.0147,0.0609

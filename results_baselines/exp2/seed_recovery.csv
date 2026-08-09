@@ -1,0 +1,91 @@
+project,concept,seed_terms_in_top20,matched,docs_assigned
+activemq,C10 Resource Management,3,cause server service,30
+activemq,C14 Cross-Site Scripting,2,script web,128
+activemq,C11 Buffer Overflow,5,code execute memory stack string,165
+activemq,C16 Access Privileges,7,access file local obtain password user users,116
+activemq,C03 Authentication Abuse,4,application name ssl verify,51
+activemq,C08 SQL Injection,7,database oracle parameter query select update write,22
+ambari,C10 Resource Management,2,server service,58
+ambari,C14 Cross-Site Scripting,2,site web,334
+ambari,C11 Buffer Overflow,6,allows code execute memory stack string,1572
+ambari,C16 Access Privileges,7,access authentication file local password user users,128
+ambari,C03 Authentication Abuse,4,application name ssl verify,105
+ambari,C08 SQL Injection,7,database oracle parameter query select update write,26
+camel,C10 Resource Management,4,cause function server service,19
+camel,C14 Cross-Site Scripting,1,web,146
+camel,C11 Buffer Overflow,2,code string,51
+camel,C16 Access Privileges,4,file local user users,32
+camel,C03 Authentication Abuse,4,application name subject verify,90
+camel,C08 SQL Injection,4,oracle parameter update write,49
+cxf,C10 Resource Management,3,cause server service,42
+cxf,C14 Cross-Site Scripting,1,web,44
+cxf,C11 Buffer Overflow,4,code execute stack string,85
+cxf,C16 Access Privileges,7,access authentication file local password user users,26
+cxf,C03 Authentication Abuse,3,application name ssl,22
+cxf,C08 SQL Injection,6,oracle parameter query select update write,198
+felix,C10 Resource Management,3,cause server service,218
+felix,C14 Cross-Site Scripting,2,index web,47
+felix,C11 Buffer Overflow,4,code execute stack string,32
+felix,C16 Access Privileges,5,access file local user users,60
+felix,C03 Authentication Abuse,3,application name ssl,21
+felix,C08 SQL Injection,4,inject parameter update write,44
+hadoop-common,C10 Resource Management,4,cause function server service,45
+hadoop-common,C14 Cross-Site Scripting,2,index site,242
+hadoop-common,C11 Buffer Overflow,6,buffer code execute memory stack string,144
+hadoop-common,C16 Access Privileges,6,access authentication file local user users,178
+hadoop-common,C03 Authentication Abuse,5,application name ssl subject verify,131
+hadoop-common,C08 SQL Injection,4,oracle parameter update write,169
+hbase,C10 Resource Management,2,cause server,302
+hbase,C14 Cross-Site Scripting,1,site,1116
+hbase,C11 Buffer Overflow,5,code execute memory stack string,340
+hbase,C16 Access Privileges,6,access file information local user users,127
+hbase,C03 Authentication Abuse,3,application name verify,123
+hbase,C08 SQL Injection,7,inject oracle parameter query select update write,164
+hive,C10 Resource Management,4,cause function server service,65
+hive,C14 Cross-Site Scripting,1,index,756
+hive,C11 Buffer Overflow,5,code execute memory stack string,709
+hive,C16 Access Privileges,4,file local user users,81
+hive,C03 Authentication Abuse,4,application name subject verify,320
+hive,C08 SQL Injection,7,database oracle parameter query select update write,65
+jackrabbit-oak,C10 Resource Management,5,cause crash function server service,14
+jackrabbit-oak,C14 Cross-Site Scripting,1,index,389
+jackrabbit-oak,C11 Buffer Overflow,4,code execute memory string,59
+jackrabbit-oak,C16 Access Privileges,6,access file local password user users,3
+jackrabbit-oak,C03 Authentication Abuse,4,application name subject verify,96
+jackrabbit-oak,C08 SQL Injection,5,database query select update write,58
+karaf,C10 Resource Management,3,cause server service,21
+karaf,C14 Cross-Site Scripting,1,web,187
+karaf,C11 Buffer Overflow,3,code execute string,75
+karaf,C16 Access Privileges,6,access file local password user users,22
+karaf,C03 Authentication Abuse,2,name verify,11
+karaf,C08 SQL Injection,5,database inject oracle parameter update,73
+pdfbox,C10 Resource Management,5,cause crash function server service,57
+pdfbox,C14 Cross-Site Scripting,1,index,192
+pdfbox,C11 Buffer Overflow,4,code memory stack string,139
+pdfbox,C16 Access Privileges,5,access file information local user,291
+pdfbox,C03 Authentication Abuse,5,application name sensitive subject verify,44
+pdfbox,C08 SQL Injection,5,oracle parameter select update write,28
+sling,C10 Resource Management,3,cause server service,58
+sling,C14 Cross-Site Scripting,4,index script scripting web,126
+sling,C11 Buffer Overflow,3,allows code string,31
+sling,C16 Access Privileges,7,access authentication file information local user users,32
+sling,C03 Authentication Abuse,4,application name subject verify,53
+sling,C08 SQL Injection,6,inject parameter query select update write,164
+spark,C10 Resource Management,4,cause crash function server,85
+spark,C14 Cross-Site Scripting,4,index remote script web,266
+spark,C11 Buffer Overflow,6,buffer code execute memory stack string,61
+spark,C16 Access Privileges,6,access file information local user users,36
+spark,C03 Authentication Abuse,3,application name verify,8
+spark,C08 SQL Injection,6,oracle parameter query select update write,16
+stanbol,C10 Resource Management,2,server service,2
+stanbol,C14 Cross-Site Scripting,2,site web,50
+stanbol,C11 Buffer Overflow,2,code string,12
+stanbol,C16 Access Privileges,5,access file local user users,3
+stanbol,C03 Authentication Abuse,2,application subject,5
+stanbol,C08 SQL Injection,3,query update write,7
+tika,C10 Resource Management,3,cause server service,10
+tika,C14 Cross-Site Scripting,2,site web,15
+tika,C11 Buffer Overflow,4,buffer code memory string,6
+tika,C16 Access Privileges,4,file information user users,15
+tika,C03 Authentication Abuse,4,application middle name verify,8
+tika,C08 SQL Injection,5,oracle parameter select update write,26

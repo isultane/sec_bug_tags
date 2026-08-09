@@ -1,0 +1,7 @@
+concept,mean_seed_terms_in_top20,docs_assigned,share_%
+C14 Cross-Site Scripting,1.8,4038,34.0
+C11 Buffer Overflow,4.2,3481,29.3
+C16 Access Privileges,5.67,1150,9.7
+C08 SQL Injection,5.4,1109,9.3
+C03 Authentication Abuse,3.6,1088,9.1
+C10 Resource Management,3.33,1026,8.6

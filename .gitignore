@@ -19,3 +19,23 @@ __pycache__/
 # which are committed source data.
 /data/
 /results/
+
+# Large regenerable inputs. These exceed GitHub's 100 MB per-file limit, so
+# they are kept out of git. Rebuild CVEsSummaries.csv with
+#   python baselines/build_cve_summaries.py
+# from the NVD feeds in cves/ (downloadable from nvd.nist.gov).
+/CVEsSummaries.csv
+/cves/
+
+# Raw JIRA/RDF dumps for the 15 Apache projects. 780 MB total, with five
+# single files over the 100 MB hard limit (hbase 157M, hive 123M,
+# hadoop-common 107M, spark 72M, ambari 68M). experiment_2/ already ships the
+# preprocessed Seeded-LDA inputs derived from these, which is what the
+# replication actually needs.
+/15 java projects issues 2013-2014/
+
+# Manuscript and reviewer correspondence -- under review, not for publication.
+/paper/
+
+# results_baselines/ is deliberately NOT ignored: it is small and it is the
+# artefact the paper cites.

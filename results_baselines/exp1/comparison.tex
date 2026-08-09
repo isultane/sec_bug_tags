@@ -1,0 +1,15 @@
+\begin{table}
+\caption{Unsupervised methods on the CVE corpus (concept--CWE alignment). All rows share one corpus, one preprocessing pipeline and one automatic majority-vote cluster--CWE mapping, so they are directly comparable.}
+\label{tab:baselines}
+\begin{tabular}{lllll}
+\toprule
+Method & F1 (macro) & F1 (weighted) & ARI & NMI \\
+\midrule
+Sentence-LDA (this work) & 0.283 & 0.532 & 0.044 & 0.297 \\
+TF-IDF + k-means & 0.294 & 0.545 & 0.045 & 0.312 \\
+LSA + k-means & 0.275 & 0.517 & 0.050 & 0.303 \\
+HDP & 0.079 & 0.383 & 0.052 & 0.172 \\
+SBERT + k-means & 0.284 & 0.527 & 0.056 & 0.303 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,16 @@
+\begin{table}
+\caption{Experiment 2: label-free comparison on the 15 Apache bug-report corpora (mean over projects, $K=6$). No security ground truth exists for these reports, so coherence and partition agreement are reported instead of precision/recall.}
+\label{tab:exp2baselines}
+\begin{tabular}{lrr}
+\toprule
+Method & NPMI coherence & ARI vs Seeded-LDA \\
+\midrule
+Seeded-LDA (this work) & 0.207 & 1.000 \\
+LDA (unseeded) & 0.236 & 0.004 \\
+NMF & 0.191 & -0.001 \\
+TF-IDF + k-means & 0.183 & -0.000 \\
+LSA + k-means & 0.182 & 0.001 \\
+SBERT + k-means & 0.190 & -0.004 \\
+\bottomrule
+\end{tabular}
+\end{table}
